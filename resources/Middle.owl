@@ -1,0 +1,810 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontologies.cf.asepaper.net/Middle#"
+     xml:base="http://ontologies.cf.asepaper.net/Middle"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://ontologies.cf.asepaper.net/Middle">
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/ssn"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <owl:imports rdf:resource="http://ontologies.cf.asepaper.net/System"/>
+        <rdfs:comment>Middle ontology (for lack of a better name for now!)</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#decreaseFunctionBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#decreaseFunctionBy"/>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#fulfills -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#fulfills">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Goal_State"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#KPI"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasActions -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasActions">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:comment>Procedural Knowledge may include one or more Action individuals with this object property.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasAffordance -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasAffordance">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Affordance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasBooleanExpression -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasBooleanExpression">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Condition"/>
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Effect"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#BooleanExpression"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#ConditionalExpression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasCapacity -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasCapacity">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Capacity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasCondition">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasCoordinate -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasCoordinate">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasDataTypes -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasDataTypes">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#ParameterType"/>
+        <rdfs:comment>Procedural Knoweldge may define one or more datatypes using this object property.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasDuration">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Duration"/>
+        <rdfs:comment>An Action entity can use this object property to describe its duration</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasDynamics -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasDynamics">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Dynamics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasEffect -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasEffect">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Effect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasFunction -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasFunction">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Function"/>
+        <rdfs:comment>A ProceduralKnowledge entity can use this object property to include functions.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasFunctionGreaterOrEqualThan -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasFunctionGreaterOrEqualThan">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#ConditionalExpression"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Function"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasLibrary -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasLibrary">
+        <rdfs:comment>References individuals describing external libraries that are used in the declarative knowledge base.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasNextState -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasNextState">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasParameterType -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasParameterType">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Parameter"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#ParameterType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasParameters -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasParameters">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Parameters"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasPredicate -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasPredicate">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#PredicateList"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Predicate"/>
+        <rdfs:comment>A boolean expression may contain a predicate.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasPredicateList -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasPredicateList">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Condition"/>
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Effect"/>
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#State"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#PredicateList"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasPredicateWithNegation -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasPredicateWithNegation">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#ConditionalExpression"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Predicates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasPreviousState -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasPreviousState">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasSystemCapability -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasSystemCapability">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasSystemRole -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasSystemRole">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasTotalCost -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasTotalCost">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Effect"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#TotalCost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#increaseFunctionBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#increaseFunctionBy"/>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#isConstrainedBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#isConstrainedBy">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Constraints"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#isMeasuredBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#isMeasuredBy">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Constraints"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#KPI"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#represents -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#represents">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Object"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#sequenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#sequenceOf">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Workflow"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#seriesOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#seriesOf">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Task"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Goal_State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#totalCostFunction -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#totalCostFunction">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#TotalCost"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Function"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasActionOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasActionOperator">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Operator of action instance</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasAmountForComparison -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasAmountForComparison">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#ConditionalExpression"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasArgument -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasArgument">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasLogicalOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasLogicalOperator">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Condition"/>
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Effect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Condition of effect has logical operator (can be &quot;and&quot;, &quot;or&quot;, etc.)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasTimingProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasTimingProperty">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#ConditionalExpression"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>If the boolean expression has a timing property, this data property can be used.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#hasValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#isExpressedIn -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#isExpressedIn">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#isOfType -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#isOfType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#totalCostIncrease -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#totalCostIncrease">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#TotalCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>If this is true than the total cost increases, if false then the cost decreases.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#totalCostNumericTermLiteral -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/Middle#totalCostNumericTermLiteral">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#TotalCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Action -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Action">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment> An action is part of procedural knowledge, and determines how to achieve a certain state (effect) given that an agent observes a particular state (condition) as being true in the world. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Actuator -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Actuator">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Device"/>
+        <rdfs:comment> Actuators are devices in cyber-physical agents which are responsible for allowing the given agent to affect the world. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Affordance -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Affordance">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> An affordance is a relation between systems, in that one system affords the opportunity for another to perform an action. In other words, the affordances of a system are the set of actions that can be performed on it. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#BooleanExpression -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#BooleanExpression"/>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Capability -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Capability">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> The capabilities of a system are the set of tasks it can perform. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Capacity -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Capacity">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment>Maximum amount of something that can be carried. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Condition -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Condition">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment> States that must be observed as being true in the world so an action can be executed. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#ConditionalExpression -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#ConditionalExpression">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment>An abstract definition of a boolean (true/false) expression.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Constraints -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Constraints">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> Constraints define the limits within which a system can perform its role. Its satiscation is measured by a KPI.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Cost -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Cost">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Current_State -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Current_State">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#State"/>
+        <rdfs:comment> Is the state at which an agent believes to be at the present moment. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Data -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Data">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Cyber"/>
+        <rdfs:comment> Data is information stored in a computational medium, which can be transfered among systems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Device -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Device">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Physical"/>
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+        <rdfs:comment> Device is a physical system which performs some specific technological role, like sensing or actuating on the environment. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Duration -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Duration">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Dynamics -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Dynamics">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> Is how a system behaves with the passage of time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Effect -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Effect">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment> The state that an agent expects the world to be at after some action being performed in the current state.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Energy -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Energy">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Physical"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Function -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Function">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment>Describes a discrete function of the system that can be part of the procedural knowledge.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Goal_State -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Goal_State">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#State"/>
+        <rdfs:comment> The state that an agent would like to achieve. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Initial_State -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Initial_State">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#State"/>
+        <rdfs:comment> The state an agent beliefs to be at the begining of its deliberation activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#KPI -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#KPI">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> A KPI measures if a constraint is satisfied. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Libraries -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Libraries">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment>In case any external libraries are used, this is the place to define them.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Location -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Location">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Money -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Money">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Cost"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Object -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Object">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Declarative_Knowledge"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Parameter -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Parameter">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment>Describes a parameter of the system used as argument of a function or within a function</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#ParameterType -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#ParameterType">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment>Datatypes for parameters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Parameters -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Parameters">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Predicate -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Predicate">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#PredicateList -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#PredicateList">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Predicates -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Predicates">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment>Any predicates that are part of the procedural knowledge can be described here.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Role -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Role">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Sensor -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Sensor">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Device"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Space -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Space">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Physical"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#State -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#State">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Declarative_Knowledge"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Task -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Task">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> A sequence of goal states assigned to a single agent. It is equivalent to a mission.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Time -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Time">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Cost"/>
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Physical"/>
+        <rdfs:comment> </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#TotalCost -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#TotalCost">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Workflow -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/Middle#Workflow">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:comment> A sequence of tasks. Each task might be assigned to a different agent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Physical -->
+
+    <rdf:Description rdf:about="http://ontologies.cf.asepaper.net/System#Physical">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:comment>This represents an abstract notion of the cost of an action.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+

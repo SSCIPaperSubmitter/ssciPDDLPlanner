@@ -1,0 +1,516 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontologies.cf.asepaper.net/ITS#"
+     xml:base="http://ontologies.cf.asepaper.net/ITS"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ns1="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://ontologies.cf.asepaper.net/ITS">
+        <owl:imports rdf:resource="http://ontologies.cf.asepaper.net/Middle"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:comment>Intelligent transport systems ontology.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#controls -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#controls">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Operational_Safety"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Dynamics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasDestination -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasDestination">
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/ITS#POI"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasDevice -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasDevice">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transport_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasEquippment -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasEquippment">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasExpenses -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasExpenses">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Cost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasOrigin">
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/ITS#POI"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasTechnology -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasTechnology">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportable_Entity"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasTransportAgent -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasTransportAgent">
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transport_Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasTransportAgentCapacity -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasTransportAgentCapacity">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transport_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Capacity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasTransportAgentDynamics -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasTransportAgentDynamics">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transport_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Dynamics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasTransportInfrastructure -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasTransportInfrastructure">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#influences -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#influences">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Operational_Safety"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/Middle#Capacity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#CoordinatesConnected -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#CoordinatesConnected">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#TransportAgentMoved"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#SafetyParameterName -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#SafetyParameterName">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Safety_Parameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#SafetyParameterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#SafetyParameterValue">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Safety_Parameter"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#TransportAgentAtEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#TransportAgentAtEnd">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#TransportAgentMovedEffect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#TransportAgentAtStart -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#TransportAgentAtStart">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#TransportAgentMoved"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#TransportAgentMoved -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#TransportAgentMoved">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#TransportAgentMovedEffect -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#TransportAgentMovedEffect">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#TransportAgentNotStart -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#TransportAgentNotStart">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#TransportAgentMovedEffect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#direction -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#direction">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Direction of movement of the agent.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#double -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#double">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#SafetyParameterValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasDurationInSeconds -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasDurationInSeconds">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/Middle#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasProceduralKnowledgeFile -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasProceduralKnowledgeFile">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>placeholder for procedural knowledge, such as PDDL domain file, problem file</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasProceduralKnowledgeFileType -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasProceduralKnowledgeFileType">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#hasProceduralKnowledgeFile"/>
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#hasSegmentLength -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#hasSegmentLength">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Track"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#int -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#int">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#SafetyParameterValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#speed -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#speed">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transport_Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#status -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#status">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/ITS#TrafficSemaphore"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Status of the semaphore.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#string -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/ITS#string">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#SafetyParameterValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Air -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Air">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Cargo -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Cargo">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportable_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Destination -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Destination">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Distance -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Distance">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Cost"/>
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Operational_Safety -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Operational_Safety"/>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#POI -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#POI">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+        <rdfs:comment>A point of interest, e.g. a crossing, a specific point in the route, a warehouse, a bus stop et cetera.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Passenger -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Passenger">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportable_Entity"/>
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Pipeline -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Pipeline">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Rail -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Rail">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Road -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Road">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Route -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Route">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Safety_Category -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Safety_Category">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Operational_Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Safety_Parameter -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Safety_Parameter">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Safety_Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Storage -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Storage">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#POI"/>
+        <rdfs:comment>Generic type of storage, can hold a transportable entity or a transport agent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Telco -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Telco">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Track -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Track">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+        <rdfs:comment>A track is part of a route.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#TrafficSemaphore -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#TrafficSemaphore">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/Middle#Actuator"/>
+        <rdfs:comment>A generic traffic regulator</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Transport_Agent -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Transport_Agent">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Transportable_Entity -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Transportable_Entity"/>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Transportation_Mode -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Transportation_Network -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Transportation_Network">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/ITS#Water -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/ITS#Water">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportation_Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/Middle#Data -->
+
+    <rdf:Description rdf:about="http://ontologies.cf.asepaper.net/Middle#Data">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/ITS#Transportable_Entity"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+

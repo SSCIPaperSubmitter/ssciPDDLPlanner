@@ -1,0 +1,1214 @@
+@prefix : <http://ontologies.cf.asepaper.net/busLogistics#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://creativecommons.org/ns#> .
+@prefix DUL: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix Middle: <http://ontologies.cf.asepaper.net/Middle#> .
+@prefix busModel: <http://ontologies.cf.asepaper.net/busModel#> .
+
+<http://ontologies.cf.asepaper.net/busLogistics> a owl:Ontology ;
+	owl:imports <http://ontologies.cf.asepaper.net/busModel> ;
+	rdfs:comment "Bus Logistics Ontology (contains problem file, including individuals)" .
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.asepaper.net/railwayLogistics#Bus
+
+<http://ontologies.cf.asepaper.net/railwayLogistics#Bus> a owl:Class .
+# 
+# http://ontologies.cf.asepaper.net/railwayLogistics#passengerdropcoordinate
+
+<http://ontologies.cf.asepaper.net/railwayLogistics#passengerdropcoordinate> a owl:Class .
+# 
+# http://ontologies.cf.asepaper.net/railwayLogistics#passengerneedsservice
+
+<http://ontologies.cf.asepaper.net/railwayLogistics#passengerneedsservice> a owl:Class .
+# 
+# http://ontologies.cf.asepaper.net/railwayLogistics#passengerpickcoordinate
+
+<http://ontologies.cf.asepaper.net/railwayLogistics#passengerpickcoordinate> a owl:Class .
+# 
+# http://ontologies.cf.asepaper.net/railwayLogistics#passengerserviced
+
+<http://ontologies.cf.asepaper.net/railwayLogistics#passengerserviced> a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#B1
+
+:B1 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#Bus> .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#B2
+
+:B2 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#Bus> .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C01
+
+:C01 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C02
+
+:C02 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C03
+
+:C03 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C04
+
+:C04 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C05
+
+:C05 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C06
+
+:C06 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C07
+
+:C07 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C08
+
+:C08 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C09
+
+:C09 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C10
+
+:C10 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C11
+
+:C11 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C12
+
+:C12 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C13
+
+:C13 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C14
+
+:C14 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C15
+
+:C15 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C16
+
+:C16 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C17
+
+:C17 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C18
+
+:C18 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C19
+
+:C19 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C20
+
+:C20 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C21
+
+:C21 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C22
+
+:C22 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C23
+
+:C23 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C24
+
+:C24 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C25
+
+:C25 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C26
+
+:C26 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C27
+
+:C27 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C28
+
+:C28 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C29
+
+:C29 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C30
+
+:C30 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C31
+
+:C31 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C32
+
+:C32 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C33
+
+:C33 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C34
+
+:C34 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C35
+
+:C35 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C36
+
+:C36 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C37
+
+:C37 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C38
+
+:C38 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C39
+
+:C39 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C40
+
+:C40 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#C41
+
+:C41 a owl:NamedIndividual , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#P1
+
+:P1 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/ITS#Passenger> .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#P2
+
+:P2 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/ITS#Passenger> .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#P3
+
+:P3 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/ITS#Passenger> .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#P4
+
+:P4 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/ITS#Passenger> .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#P5
+
+:P5 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/ITS#Passenger> .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C01_C02
+
+:azdistance_C01_C02 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C01 , :C02 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C02_C03
+
+:azdistance_C02_C03 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C02 , :C03 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C03_C04
+
+:azdistance_C03_C04 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C03 , :C04 ;
+	busModel:hasValue "4"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C04_C05
+
+:azdistance_C04_C05 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C04 , :C05 ;
+	busModel:hasValue "4"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C05_C06
+
+:azdistance_C05_C06 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C05 , :C06 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C06_C07
+
+:azdistance_C06_C07 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C06 , :C07 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C07_C08
+
+:azdistance_C07_C08 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C07 , :C08 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C08_C09
+
+:azdistance_C08_C09 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C08 , :C09 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C09_C10
+
+:azdistance_C09_C10 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C09 , :C10 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C10_C11
+
+:azdistance_C10_C11 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C10 , :C11 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C11_C12
+
+:azdistance_C11_C12 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C11 , :C12 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C12_C13
+
+:azdistance_C12_C13 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C12 , :C13 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C13_C14
+
+:azdistance_C13_C14 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C13 , :C14 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C14_C15
+
+:azdistance_C14_C15 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C14 , :C15 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C15_C16
+
+:azdistance_C15_C16 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C15 , :C16 ;
+	busModel:hasValue "6"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C16_C17
+
+:azdistance_C16_C17 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C16 , :C17 ;
+	busModel:hasValue "5"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C17_C18
+
+:azdistance_C17_C18 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C17 , :C18 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C18_C19
+
+:azdistance_C18_C19 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C18 , :C19 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C19_C20
+
+:azdistance_C19_C20 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C19 , :C20 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C20_C21
+
+:azdistance_C20_C21 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C20 , :C21 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C21_C22
+
+:azdistance_C21_C22 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C21 , :C22 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C22_C23
+
+:azdistance_C22_C23 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C22 , :C23 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C23_C24
+
+:azdistance_C23_C24 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C23 , :C24 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C24_C25
+
+:azdistance_C24_C25 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C24 , :C25 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C25_C26
+
+:azdistance_C25_C26 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C25 , :C26 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C26_C27
+
+:azdistance_C26_C27 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C26 , :C27 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C27_C28
+
+:azdistance_C27_C28 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C27 , :C28 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C27_C37
+
+:azdistance_C27_C37 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C27 , :C37 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C28_C29
+
+:azdistance_C28_C29 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C28 , :C29 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C29_C30
+
+:azdistance_C29_C30 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C29 , :C30 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C30_C31
+
+:azdistance_C30_C31 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C30 , :C31 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C31_C32
+
+:azdistance_C31_C32 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C31 , :C32 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C32_C33
+
+:azdistance_C32_C33 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C32 , :C33 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C33_C34
+
+:azdistance_C33_C34 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C33 , :C34 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C34_C35
+
+:azdistance_C34_C35 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C34 , :C35 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C35_C36
+
+:azdistance_C35_C36 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C35 , :C36 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C36_C40
+
+:azdistance_C36_C40 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C36 , :C40 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C37_C38
+
+:azdistance_C37_C38 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C37 , :C38 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C38_C39
+
+:azdistance_C38_C39 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C38 , :C39 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C39_C40
+
+:azdistance_C39_C40 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C39 , :C40 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C40_C41
+
+:azdistance_C40_C41 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C40 , :C41 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azdistance_C41_C01
+
+:azdistance_C41_C01 a owl:NamedIndividual , busModel:azdistance ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C01 , :C41 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C01_C02
+
+:azduration_C01_C02 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C01 , :C02 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C02_C03
+
+:azduration_C02_C03 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C02 , :C03 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C03_C04
+
+:azduration_C03_C04 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C03 , :C04 ;
+	busModel:hasValue "4"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C04_C05
+
+:azduration_C04_C05 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C04 , :C05 ;
+	busModel:hasValue "4"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C05_C06
+
+:azduration_C05_C06 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C05 , :C06 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C06_C07
+
+:azduration_C06_C07 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C06 , :C07 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C07_C08
+
+:azduration_C07_C08 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C07 , :C08 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C08_C09
+
+:azduration_C08_C09 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C08 , :C09 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C09_C10
+
+:azduration_C09_C10 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C09 , :C10 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C10_C11
+
+:azduration_C10_C11 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C10 , :C11 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C11_C12
+
+:azduration_C11_C12 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C11 , :C12 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C12_C13
+
+:azduration_C12_C13 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C12 , :C13 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C13_C14
+
+:azduration_C13_C14 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C13 , :C14 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C14_C15
+
+:azduration_C14_C15 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C14 , :C15 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C15_C16
+
+:azduration_C15_C16 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C15 , :C16 ;
+	busModel:hasValue "6"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C16_C17
+
+:azduration_C16_C17 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C16 , :C17 ;
+	busModel:hasValue "5"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C17_C18
+
+:azduration_C17_C18 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C17 , :C18 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C18_C19
+
+:azduration_C18_C19 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C18 , :C19 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C19_C20
+
+:azduration_C19_C20 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C19 , :C20 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C20_C21
+
+:azduration_C20_C21 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C20 , :C21 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C21_C22
+
+:azduration_C21_C22 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C21 , :C22 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C22_C23
+
+:azduration_C22_C23 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C22 , :C23 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C23_C24
+
+:azduration_C23_C24 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C23 , :C24 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C24_C25
+
+:azduration_C24_C25 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C24 , :C25 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C25_C26
+
+:azduration_C25_C26 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C25 , :C26 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C26_C27
+
+:azduration_C26_C27 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C26 , :C27 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C27_C28
+
+:azduration_C27_C28 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C27 , :C28 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C27_C37
+
+:azduration_C27_C37 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C27 , :C37 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C28_C29
+
+:azduration_C28_C29 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C28 , :C29 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C29_C30
+
+:azduration_C29_C30 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C29 , :C30 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C30_C31
+
+:azduration_C30_C31 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C30 , :C31 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C31_C32
+
+:azduration_C31_C32 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C31 , :C32 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C32_C33
+
+:azduration_C32_C33 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C32 , :C33 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C33_C34
+
+:azduration_C33_C34 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C33 , :C34 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C34_C35
+
+:azduration_C34_C35 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C34 , :C35 ;
+	busModel:hasValue "3"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C35_C36
+
+:azduration_C35_C36 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C35 , :C36 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C36_C40
+
+:azduration_C36_C40 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C36 , :C40 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C37_C38
+
+:azduration_C37_C38 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C37 , :C38 ;
+	busModel:hasValue "2"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C38_C39
+
+:azduration_C38_C39 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C38 , :C39 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C39_C40
+
+:azduration_C39_C40 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C39 , :C40 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C40_C41
+
+:azduration_C40_C41 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C40 , :C41 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#azduration_C41_C01
+
+:azduration_C41_C01 a owl:NamedIndividual , busModel:azduration ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :C01 , :C41 ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#busatcoordinate_B1_C01
+
+:busatcoordinate_B1_C01 a owl:NamedIndividual , busModel:busatcoordinate ;
+	busModel:hasParameter :C01 , :B1 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#busatcoordinate_B2_C01
+
+:busatcoordinate_B2_C01 a owl:NamedIndividual , busModel:busatcoordinate ;
+	busModel:hasParameter :C01 , :B2 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#busseatingcapacity_B1
+
+:busseatingcapacity_B1 a owl:NamedIndividual , busModel:busseatingcapacity ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :B1 ;
+	busModel:hasValue "3"^^xsd:nonNegativeInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#busseatingcapacity_B2
+
+:busseatingcapacity_B2 a owl:NamedIndividual , busModel:busseatingcapacity ;
+	busModel:hasOperator "=" ;
+	busModel:hasParameter :B2 ;
+	busModel:hasValue "2"^^xsd:nonNegativeInteger .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C01_C02
+
+:connected_C01_C02 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C01 , :C02 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C02_C03
+
+:connected_C02_C03 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C02 , :C03 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C03_C04
+
+:connected_C03_C04 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C03 , :C04 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C04_C05
+
+:connected_C04_C05 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C04 , :C05 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C05_C06
+
+:connected_C05_C06 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C05 , :C06 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C06_C07
+
+:connected_C06_C07 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C06 , :C07 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C07_C08
+
+:connected_C07_C08 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C07 , :C08 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C08_C09
+
+:connected_C08_C09 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C08 , :C09 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C09_C10
+
+:connected_C09_C10 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C09 , :C10 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C10_C11
+
+:connected_C10_C11 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C10 , :C11 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C11_C12
+
+:connected_C11_C12 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C11 , :C12 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C12_C13
+
+:connected_C12_C13 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C12 , :C13 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C13_C14
+
+:connected_C13_C14 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C13 , :C14 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C14_C15
+
+:connected_C14_C15 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C14 , :C15 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C15_C16
+
+:connected_C15_C16 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C15 , :C16 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C16_C17
+
+:connected_C16_C17 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C16 , :C17 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C17_C18
+
+:connected_C17_C18 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C17 , :C18 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C18_C19
+
+:connected_C18_C19 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C18 , :C19 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C19_C20
+
+:connected_C19_C20 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C19 , :C20 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C20_C21
+
+:connected_C20_C21 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C20 , :C21 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C21_C22
+
+:connected_C21_C22 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C21 , :C22 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C22_C23
+
+:connected_C22_C23 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C22 , :C23 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C23_C24
+
+:connected_C23_C24 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C23 , :C24 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C24_C25
+
+:connected_C24_C25 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C24 , :C25 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C25_C26
+
+:connected_C25_C26 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C25 , :C26 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C26_C27
+
+:connected_C26_C27 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C26 , :C27 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C27_C28
+
+:connected_C27_C28 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C27 , :C28 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C27_C37
+
+:connected_C27_C37 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C27 , :C37 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C28_C29
+
+:connected_C28_C29 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C28 , :C29 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C29_C30
+
+:connected_C29_C30 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C29 , :C30 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C30_C31
+
+:connected_C30_C31 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C30 , :C31 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C31_C32
+
+:connected_C31_C32 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C31 , :C32 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C32_C33
+
+:connected_C32_C33 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C32 , :C33 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C33_C34
+
+:connected_C33_C34 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C33 , :C34 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C34_C35
+
+:connected_C34_C35 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C34 , :C35 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C35_C36
+
+:connected_C35_C36 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C35 , :C36 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C36_C37
+
+:connected_C36_C37 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C36 , :C37 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C37_C38
+
+:connected_C37_C38 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C37 , :C38 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C38_C39
+
+:connected_C38_C39 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C38 , :C39 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C39_C40
+
+:connected_C39_C40 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C39 , :C40 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C40_C41
+
+:connected_C40_C41 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C40 , :C41 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#connected_C41_C01
+
+:connected_C41_C01 a owl:NamedIndividual , busModel:connected ;
+	busModel:hasParameter :C01 , :C41 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#goal
+
+:goal a owl:NamedIndividual , Middle:Action ;
+	Middle:hasPredicateList :goal_predicate_list ;
+	Middle:hasActionOperator "and" .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#goal_predicate_list
+
+:goal_predicate_list a owl:NamedIndividual , Middle:PredicateList ;
+	Middle:hasPredicate :passengerserviced_P1 , :passengerserviced_P2 , :passengerserviced_P3 , :passengerserviced_P4 , :passengerserviced_P5 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#init
+
+:init a owl:NamedIndividual , Middle:Action ;
+	Middle:hasPredicateList :init_predicate_list .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#init_predicate_list
+
+:init_predicate_list a owl:NamedIndividual , Middle:PredicateList ;
+	Middle:hasPredicate :azdistance_C01_C02 , :azdistance_C02_C03 , :azdistance_C03_C04 , :azdistance_C04_C05 , :azdistance_C05_C06 , :azdistance_C06_C07 , :azdistance_C07_C08 , :azdistance_C08_C09 , :azdistance_C09_C10 , :azdistance_C10_C11 , :azdistance_C11_C12 , :azdistance_C12_C13 , :azdistance_C13_C14 , :azdistance_C14_C15 , :azdistance_C15_C16 , :azdistance_C16_C17 , :azdistance_C17_C18 , :azdistance_C18_C19 , :azdistance_C19_C20 , :azdistance_C20_C21 , :azdistance_C21_C22 , :azdistance_C22_C23 , :azdistance_C23_C24 , :azdistance_C24_C25 , :azdistance_C25_C26 , :azdistance_C26_C27 , :azdistance_C27_C28 , :azdistance_C27_C37 , :azdistance_C28_C29 , :azdistance_C29_C30 , :azdistance_C30_C31 , :azdistance_C31_C32 , :azdistance_C32_C33 , :azdistance_C33_C34 , :azdistance_C34_C35 , :azdistance_C35_C36 , :azdistance_C36_C40 , :azdistance_C37_C38 , :azdistance_C38_C39 , :azdistance_C39_C40 , :azdistance_C41_C01 , :azduration_C01_C02 , :azduration_C02_C03 , :azduration_C03_C04 , :azduration_C04_C05 , :azduration_C05_C06 , :azduration_C06_C07 , :azduration_C07_C08 , :azduration_C08_C09 , :azduration_C09_C10 , :azduration_C10_C11 , :azduration_C11_C12 , :azduration_C12_C13 , :azduration_C13_C14 , :azduration_C14_C15 , :azduration_C15_C16 , :azduration_C16_C17 , :azduration_C17_C18 , :azduration_C18_C19 , :azduration_C19_C20 , :azduration_C20_C21 , :azduration_C21_C22 , :azduration_C22_C23 , :azduration_C23_C24 , :azduration_C24_C25 , :azduration_C25_C26 , :azduration_C26_C27 , :azduration_C27_C28 , :azduration_C27_C37 , :azduration_C28_C29 , :azduration_C29_C30 , :azduration_C30_C31 , :azduration_C31_C32 , :azduration_C32_C33 , :azduration_C33_C34 , :azduration_C34_C35 , :azduration_C35_C36 , :azduration_C36_C40 , :azduration_C37_C38 , :azduration_C38_C39 , :azduration_C39_C40 , :azduration_C40_C41 , :azduration_C41_C01 , :busatcoordinate_B1_C01 , :busatcoordinate_B2_C01 , :busseatingcapacity_B1 , :busseatingcapacity_B2 , :connected_C01_C02 , :connected_C02_C03 , :connected_C03_C04 , :connected_C04_C05 , :connected_C05_C06 , :connected_C06_C07 , :connected_C07_C08 , :connected_C08_C09 , :connected_C09_C10 , :connected_C10_C11 , :connected_C11_C12 , :connected_C12_C13 , :connected_C13_C14 , :connected_C14_C15 , :connected_C15_C16 , :connected_C16_C17 , :connected_C17_C18 , :connected_C18_C19 , :connected_C19_C20 , :connected_C20_C21 , :connected_C21_C22 , :connected_C22_C23 , :connected_C23_C24 , :connected_C24_C25 , :connected_C25_C26 , :connected_C26_C27 , :connected_C27_C28 , :connected_C27_C37 , :connected_C28_C29 , :connected_C29_C30 , :connected_C30_C31 , :connected_C31_C32 , :connected_C32_C33 , :connected_C33_C34 , :connected_C34_C35 , :connected_C35_C36 , :connected_C37_C38 , :connected_C38_C39 , :connected_C39_C40 , :connected_C40_C41 , :connected_C41_C01 , :isbusstop_C01 , :isbusstop_C12 , :isbusstop_C17 , :passengerdropcoordinate_P1_C12 , :passengerdropcoordinate_P2_C12 , :passengerdropcoordinate_P3_C17 , :passengerdropcoordinate_P4_C17 , :passengerdropcoordinate_P5_C17 , :passengerneedsservice_P1 , :passengerneedsservice_P2 , :passengerneedsservice_P3 , :passengerneedsservice_P4 , :passengerneedsservice_P5 , :passengerpickcoordinate_P1_C01 , :passengerpickcoordinate_P2_C01 , :passengerpickcoordinate_P3_C01 , :passengerpickcoordinate_P4_C01 , :passengerpickcoordinate_P5_C01 , :total-cost .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#isbusstop_C01
+
+:isbusstop_C01 a owl:NamedIndividual , busModel:isbusstop ;
+	busModel:hasParameter :C01 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#isbusstop_C12
+
+:isbusstop_C12 a owl:NamedIndividual , busModel:isbusstop ;
+	busModel:hasParameter :C12 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#isbusstop_C17
+
+:isbusstop_C17 a owl:NamedIndividual , busModel:isbusstop ;
+	busModel:hasParameter :C17 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerdropcoordinate_P1_C12
+
+:passengerdropcoordinate_P1_C12 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerdropcoordinate> ;
+	busModel:hasParameter :P1 , :C12 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerdropcoordinate_P2_C12
+
+:passengerdropcoordinate_P2_C12 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerdropcoordinate> ;
+	busModel:hasParameter :P2 , :C12 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerdropcoordinate_P3_C17
+
+:passengerdropcoordinate_P3_C17 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerdropcoordinate> ;
+	busModel:hasParameter :P3 , :C17 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerdropcoordinate_P4_C17
+
+:passengerdropcoordinate_P4_C17 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerdropcoordinate> ;
+	busModel:hasParameter :P4 , :C17 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerdropcoordinate_P5_C17
+
+:passengerdropcoordinate_P5_C17 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerdropcoordinate> ;
+	busModel:hasParameter :P5 , :C17 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerneedsservice_P1
+
+:passengerneedsservice_P1 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerneedsservice> ;
+	busModel:hasParameter :P1 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerneedsservice_P2
+
+:passengerneedsservice_P2 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerneedsservice> ;
+	busModel:hasParameter :P2 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerneedsservice_P3
+
+:passengerneedsservice_P3 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerneedsservice> ;
+	busModel:hasParameter :P3 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerneedsservice_P4
+
+:passengerneedsservice_P4 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerneedsservice> ;
+	busModel:hasParameter :P4 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerneedsservice_P5
+
+:passengerneedsservice_P5 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerneedsservice> ;
+	busModel:hasParameter :P5 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerpickcoordinate_P1_C01
+
+:passengerpickcoordinate_P1_C01 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerpickcoordinate> ;
+	busModel:hasParameter :P1 , :C01 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerpickcoordinate_P2_C01
+
+:passengerpickcoordinate_P2_C01 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerpickcoordinate> ;
+	busModel:hasParameter :P2 , :C01 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerpickcoordinate_P3_C01
+
+:passengerpickcoordinate_P3_C01 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerpickcoordinate> ;
+	busModel:hasParameter :P3 , :C01 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerpickcoordinate_P4_C01
+
+:passengerpickcoordinate_P4_C01 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerpickcoordinate> ;
+	busModel:hasParameter :P4 , :C01 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerpickcoordinate_P5_C01
+
+:passengerpickcoordinate_P5_C01 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerpickcoordinate> ;
+	busModel:hasParameter :P5 , :C01 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerserviced_P1
+
+:passengerserviced_P1 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerserviced> ;
+	busModel:hasParameter :P1 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerserviced_P2
+
+:passengerserviced_P2 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerserviced> ;
+	busModel:hasParameter :P2 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerserviced_P3
+
+:passengerserviced_P3 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerserviced> ;
+	busModel:hasParameter :P3 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerserviced_P4
+
+:passengerserviced_P4 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerserviced> ;
+	busModel:hasParameter :P4 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#passengerserviced_P5
+
+:passengerserviced_P5 a owl:NamedIndividual , <http://ontologies.cf.asepaper.net/railwayLogistics#passengerserviced> ;
+	busModel:hasParameter :P5 .
+# 
+# http://ontologies.cf.asepaper.net/busLogistics#total-cost
+
+:total-cost a owl:NamedIndividual , busModel:total-cost ;
+	busModel:hasOperator "=" ;
+	busModel:hasValue "0"^^xsd:nonNegativeInteger .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

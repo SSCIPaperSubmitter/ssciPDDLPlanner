@@ -1,0 +1,592 @@
+@prefix : <http://ontologies.cf.asepaper.net/railwayLogistics#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://creativecommons.org/ns#> .
+@prefix ITS: <http://ontologies.cf.asepaper.net/ITS#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix busModel: <http://ontologies.cf.asepaper.net/busModel#> .
+
+<http://ontologies.cf.asepaper.net/busModel> a owl:Ontology ;
+	owl:imports <http://ontologies.cf.asepaper.net/ITS> ;
+	rdfs:comment "Bus model ontology" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasCondition
+
+busModel:hasCondition a owl:AnnotationProperty ;
+	rdfs:range <http://ontologies.cf.asepaper.net/Middle#Condition> ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Action> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasConditionExpressionPart
+
+busModel:hasConditionExpressionPart a owl:AnnotationProperty ;
+	rdfs:range <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Condition> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasConditionOperator
+
+busModel:hasConditionOperator a owl:AnnotationProperty ;
+	rdfs:range xsd:string ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Condition> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasDuration
+
+busModel:hasDuration a owl:AnnotationProperty ;
+	rdfs:comment "This annotation property is used to assign duration to actions." ;
+	rdfs:range <http://ontologies.cf.asepaper.net/Middle#Duration> ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Action> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasEffect
+
+busModel:hasEffect a owl:AnnotationProperty ;
+	rdfs:range <http://ontologies.cf.asepaper.net/Middle#Effect> ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Action> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasEffectOperator
+
+busModel:hasEffectOperator a owl:AnnotationProperty ;
+	busModel:hasEffectOperator "AND"^^xsd:string ;
+	rdfs:range xsd:string ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Effect> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasName
+
+busModel:hasName a owl:AnnotationProperty ;
+	rdfs:comment ""^^xsd:string ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/System#System> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasNegation
+
+busModel:hasNegation a owl:AnnotationProperty ;
+	busModel:hasNegation "true"^^xsd:double ;
+	busModel:hasParameter busModel:busatcoordinate-start ;
+	rdfs:range xsd:boolean ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasOperator
+
+busModel:hasOperator a owl:AnnotationProperty ;
+	busModel:hasOperator "increase"^^xsd:string ;
+	rdfs:range xsd:string ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Function> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasParameter
+
+busModel:hasParameter a owl:AnnotationProperty ;
+	rdfs:range <http://ontologies.cf.asepaper.net/Middle#Parameters> ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/System#Procedural_Knowledge> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasTiming
+
+busModel:hasTiming a owl:AnnotationProperty ;
+	rdfs:range xsd:string ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasValue
+
+busModel:hasValue a owl:AnnotationProperty ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Function> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#isDurativeAction
+
+busModel:isDurativeAction a owl:AnnotationProperty ;
+	rdfs:comment "Specifies whether the action is durative or not" ;
+	rdfs:range xsd:boolean ;
+	rdfs:domain <http://ontologies.cf.asepaper.net/Middle#Action> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.asepaper.net/busModel#AssertsBusStop
+
+busModel:AssertsBusStop a owl:ObjectProperty ;
+	rdfs:range ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#AssertsPOIs
+
+busModel:AssertsPOIs a owl:ObjectProperty ;
+	rdfs:range ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#AssertsWhetherBusIsAtPOI
+
+busModel:AssertsWhetherBusIsAtPOI a owl:ObjectProperty .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasDropOffPOI
+
+busModel:hasDropOffPOI a owl:ObjectProperty ;
+	rdfs:domain ITS:Passenger ;
+	rdfs:range ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasEndPOI
+
+busModel:hasEndPOI a owl:ObjectProperty ;
+	rdfs:domain ITS:Track ;
+	rdfs:range ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasPassenger
+
+busModel:hasPassenger a owl:ObjectProperty ;
+	rdfs:domain busModel:Bus ;
+	rdfs:range ITS:Passenger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasPickUpPOI
+
+busModel:hasPickUpPOI a owl:ObjectProperty ;
+	rdfs:domain ITS:Passenger ;
+	rdfs:range ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#hasStartPOI
+
+busModel:hasStartPOI a owl:ObjectProperty ;
+	rdfs:domain ITS:Track ;
+	rdfs:range ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#isLocatedAt
+
+busModel:isLocatedAt a owl:ObjectProperty ;
+	rdfs:domain busModel:Bus_Stop ;
+	rdfs:range ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#isWaitingAt
+
+busModel:isWaitingAt a owl:ObjectProperty ;
+	rdfs:domain ITS:Passenger ;
+	rdfs:range ITS:POI .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.asepaper.net/ITS#POI
+
+ITS:POI rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Parameters> .
+# 
+# http://ontologies.cf.asepaper.net/ITS#Passenger
+
+ITS:Passenger rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Parameters> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#Bus
+
+busModel:Bus a owl:Class ;
+	rdfs:subClassOf ITS:Transport_Agent , <http://ontologies.cf.asepaper.net/Middle#Parameters> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#Bus_Stop
+
+busModel:Bus_Stop a owl:Class ;
+	rdfs:subClassOf ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#Road
+
+busModel:Road a owl:Class ;
+	rdfs:subClassOf ITS:Route .
+# 
+# http://ontologies.cf.asepaper.net/busModel#Road_Network
+
+busModel:Road_Network a owl:Class ;
+	rdfs:subClassOf ITS:Transportation_Network .
+# 
+# http://ontologies.cf.asepaper.net/busModel#Terminal
+
+busModel:Terminal a owl:Class ;
+	rdfs:subClassOf ITS:POI .
+# 
+# http://ontologies.cf.asepaper.net/busModel#azdistance
+
+busModel:azdistance a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasParameter busModel:end-coordinate , busModel:start-coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busModel#azduration
+
+busModel:azduration a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasParameter busModel:end-coordinate , busModel:start-coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busModel#busatcoordinate
+
+busModel:busatcoordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter busModel:Bus , busModel:coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busModel#busatcoordinate-end
+
+busModel:busatcoordinate-end a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> , busModel:busatcoordinate ;
+	busModel:hasName "busatcoordinate"^^xsd:string ;
+	busModel:hasParameter busModel:Bus , busModel:end-coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busModel#busatcoordinate-start
+
+busModel:busatcoordinate-start a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> , busModel:busatcoordinate ;
+	busModel:hasName "busatcoordinate"^^xsd:string ;
+	busModel:hasParameter busModel:Bus , busModel:start-coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busModel#busseatingcapacity
+
+busModel:busseatingcapacity a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasOperator ">="^^xsd:string ;
+	busModel:hasParameter busModel:Bus ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#busseatingcapacity-decrease
+
+busModel:busseatingcapacity-decrease a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasName "busseatingcapacity"^^xsd:string ;
+	busModel:hasOperator "decrease"^^xsd:string ;
+	busModel:hasParameter busModel:Bus ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#busseatingcapacity-increase
+
+busModel:busseatingcapacity-increase a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasName "busseatingcapacity"^^xsd:string ;
+	busModel:hasOperator "increase"^^xsd:string ;
+	busModel:hasParameter busModel:Bus ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#connected
+
+busModel:connected a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter busModel:end-coordinate , busModel:start-coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busModel#coordinate
+
+busModel:coordinate a owl:Class ;
+	rdfs:subClassOf ITS:POI , <http://ontologies.cf.asepaper.net/Middle#Parameters> .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger
+
+busModel:drop-passenger a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Action> ;
+	busModel:hasCondition busModel:drop-passenger-condition ;
+	busModel:hasDuration busModel:drop-passenger-duration ;
+	busModel:hasEffect busModel:drop-passenger-effect ;
+	busModel:hasParameter ITS:Passenger , busModel:Bus , busModel:start-coordinate ;
+	busModel:isDurativeAction "true"^^xsd:boolean .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-busseatingcapacity-increase
+
+busModel:drop-passenger-busseatingcapacity-increase a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasOperator "increase"^^xsd:string ;
+	busModel:hasParameter busModel:busseatingcapacity-increase ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-condition
+
+busModel:drop-passenger-condition a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Condition> ;
+	busModel:hasConditionExpressionPart busModel:drop-passenger-passengerdropcoordinate , busModel:move-to-next-coordinate-busatcoordinate , busModel:pickup-passenger-isbusstop , busModel:pickup-passenger-passengerinbus ;
+	busModel:hasConditionOperator "AND"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-duration
+
+busModel:drop-passenger-duration a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Duration> ;
+	busModel:hasParameter "0"^^xsd:nonNegativeInteger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-effect
+
+busModel:drop-passenger-effect a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Effect> ;
+	busModel:hasConditionExpressionPart busModel:drop-passenger-busseatingcapacity-increase , busModel:drop-passenger-passengerdropcoordinate-negation , busModel:drop-passenger-passengerinbus-negation , busModel:drop-passenger-passengerserviced , busModel:pickup-passenger-totalcost ;
+	busModel:hasEffectOperator "AND"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-passengerdropcoordinate
+
+busModel:drop-passenger-passengerdropcoordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:passengerdropcoordinate ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-passengerdropcoordinate-negation
+
+busModel:drop-passenger-passengerdropcoordinate-negation a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasNegation "true"^^xsd:boolean ;
+	busModel:hasParameter busModel:passengerdropcoordinate ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-passengerinbus-negation
+
+busModel:drop-passenger-passengerinbus-negation a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasNegation "true"^^xsd:boolean ;
+	busModel:hasParameter busModel:passengerinbus ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#drop-passenger-passengerserviced
+
+busModel:drop-passenger-passengerserviced a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:passengerserviced ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#end-coordinate
+
+busModel:end-coordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Parameters> ;
+	busModel:hasName "coordinate" .
+# 
+# http://ontologies.cf.asepaper.net/busModel#isbusstop
+
+busModel:isbusstop a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter busModel:start-coordinate .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-coordinate-busatcoordinate
+
+busModel:move-to-next-coordinate-busatcoordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:busatcoordinate-start ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-coordinate-busatcoordinate-end
+
+busModel:move-to-next-coordinate-busatcoordinate-end a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:busatcoordinate-end ;
+	busModel:hasTiming "at end" .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-coordinate-busatcoordinate-negation
+
+busModel:move-to-next-coordinate-busatcoordinate-negation a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasNegation "true"^^xsd:string ;
+	busModel:hasParameter busModel:busatcoordinate-start ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-coordinate-connected
+
+busModel:move-to-next-coordinate-connected a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:connected ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-coordinate-total-cost-increase-distance
+
+busModel:move-to-next-coordinate-total-cost-increase-distance a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:azdistance , busModel:total-cost ;
+	busModel:hasTiming "at end"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-poi
+
+busModel:move-to-next-poi a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Action> ;
+	busModel:hasCondition busModel:move-to-next-poi-condition ;
+	busModel:hasDuration busModel:move-to-next-poi-duration ;
+	busModel:hasEffect busModel:move-to-next-poi-effect ;
+	busModel:hasParameter busModel:Bus , busModel:end-coordinate , busModel:start-coordinate ;
+	busModel:isDurativeAction "true"^^xsd:boolean .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-poi-condition
+
+busModel:move-to-next-poi-condition a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Condition> ;
+	busModel:hasConditionExpressionPart busModel:move-to-next-coordinate-busatcoordinate , busModel:move-to-next-coordinate-connected ;
+	busModel:hasConditionOperator "AND"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-poi-duration
+
+busModel:move-to-next-poi-duration a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Duration> ;
+	busModel:hasParameter busModel:azduration .
+# 
+# http://ontologies.cf.asepaper.net/busModel#move-to-next-poi-effect
+
+busModel:move-to-next-poi-effect a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Effect> ;
+	busModel:hasConditionExpressionPart busModel:move-to-next-coordinate-busatcoordinate-end , busModel:move-to-next-coordinate-busatcoordinate-negation , busModel:move-to-next-coordinate-total-cost-increase-distance ;
+	busModel:hasEffectOperator "AND"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#noofpassengersinbus
+
+busModel:noofpassengersinbus a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasParameter busModel:Bus .
+# 
+# http://ontologies.cf.asepaper.net/busModel#passengerdropcoordinate
+
+busModel:passengerdropcoordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter busModel:start-coordinate , ITS:Passenger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#passengerinbus
+
+busModel:passengerinbus a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter ITS:Passenger , busModel:Bus .
+# 
+# http://ontologies.cf.asepaper.net/busModel#passengerneedsservice
+
+busModel:passengerneedsservice a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter ITS:Passenger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#passengerpickcoordinate
+
+busModel:passengerpickcoordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter busModel:start-coordinate , ITS:Passenger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#passengerpickupwait
+
+busModel:passengerpickupwait a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasParameter ITS:Passenger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#passengerserviced
+
+busModel:passengerserviced a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Predicate> ;
+	busModel:hasParameter ITS:Passenger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger
+
+busModel:pickup-passenger a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Action> ;
+	busModel:hasCondition busModel:pickup-passenger-condition ;
+	busModel:hasDuration busModel:pickup-passenger-duration ;
+	busModel:hasEffect busModel:pickup-passenger-effect ;
+	busModel:hasParameter ITS:Passenger , busModel:Bus , busModel:start-coordinate ;
+	busModel:isDurativeAction "true"^^xsd:boolean .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-busseatingcapacity
+
+busModel:pickup-passenger-busseatingcapacity a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasOperator ">=" ;
+	busModel:hasParameter busModel:busseatingcapacity ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-busseatingcapacity-decrease
+
+busModel:pickup-passenger-busseatingcapacity-decrease a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasOperator "decrease"^^xsd:string ;
+	busModel:hasParameter busModel:busseatingcapacity-decrease ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-condition
+
+busModel:pickup-passenger-condition a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Condition> ;
+	busModel:hasConditionExpressionPart busModel:move-to-next-coordinate-busatcoordinate , busModel:pickup-passenger-busseatingcapacity , busModel:pickup-passenger-isbusstop , busModel:pickup-passenger-passengerneedsservice , busModel:pickup-passenger-passengerpickcoordinate ;
+	busModel:hasConditionOperator "AND"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-duration
+
+busModel:pickup-passenger-duration a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Duration> ;
+	busModel:hasParameter "0"^^xsd:nonNegativeInteger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-effect
+
+busModel:pickup-passenger-effect a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Effect> ;
+	busModel:hasConditionExpressionPart busModel:pickup-passenger-busseatingcapacity-decrease , busModel:pickup-passenger-passengerinbus , busModel:pickup-passenger-passengerneedsservice-negation , busModel:pickup-passenger-passengerpickcoordinate-negation , busModel:pickup-passenger-totalcost ;
+	busModel:hasEffectOperator "AND"^^xsd:positiveInteger .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-isbusstop
+
+busModel:pickup-passenger-isbusstop a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:isbusstop ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-passengerinbus
+
+busModel:pickup-passenger-passengerinbus a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:passengerinbus ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-passengerneedsservice
+
+busModel:pickup-passenger-passengerneedsservice a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:passengerneedsservice ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-passengerneedsservice-negation
+
+busModel:pickup-passenger-passengerneedsservice-negation a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasNegation "true"^^xsd:boolean ;
+	busModel:hasParameter busModel:passengerneedsservice ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-passengerpickcoordinate
+
+busModel:pickup-passenger-passengerpickcoordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:passengerpickcoordinate ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-passengerpickcoordinate-negation
+
+busModel:pickup-passenger-passengerpickcoordinate-negation a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasNegation "true"^^xsd:boolean ;
+	busModel:hasParameter busModel:passengerpickcoordinate ;
+	busModel:hasTiming "at start"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#pickup-passenger-totalcost
+
+busModel:pickup-passenger-totalcost a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#ConditionalExpression> ;
+	busModel:hasParameter busModel:total-cost-decrease ;
+	busModel:hasTiming "at end"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#start-coordinate
+
+busModel:start-coordinate a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Parameters> ;
+	busModel:hasName "coordinate" .
+# 
+# http://ontologies.cf.asepaper.net/busModel#total-cost
+
+busModel:total-cost a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasOperator "increase"^^xsd:string .
+# 
+# http://ontologies.cf.asepaper.net/busModel#total-cost-decrease
+
+busModel:total-cost-decrease a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.asepaper.net/Middle#Function> ;
+	busModel:hasName "total-cost"^^xsd:string ;
+	busModel:hasOperator "decrease"^^xsd:string ;
+	busModel:hasValue "1"^^xsd:positiveInteger .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

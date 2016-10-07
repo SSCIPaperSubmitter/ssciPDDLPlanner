@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontologies.cf.asepaper.net/System#"
+     xml:base="http://ontologies.cf.asepaper.net/System"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ontologies.cf.asepaper.net/System">
+        <rdfs:comment>A set of connected things or parts forming a complex whole. A system can also be used as resource by other systems.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#has -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/System#has">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:comment>The described resource has the referenced resource.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#hasAgentKnowledgeBase -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/System#hasAgentKnowledgeBase">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#CPS_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/System#Knowledge_Base"/>
+        <rdfs:comment>The described agent contains knowledge base software of the referenced entity.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#hasInterface -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/System#hasInterface">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#CPS_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/System#Environment_Interface"/>
+        <rdfs:comment>The described entity exposes an interface specified in the referenced entity to its users.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#interactsWith -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.asepaper.net/System#interactsWith">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Reasoner"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.asepaper.net/System#Environment_Interface"/>
+        <rdfs:comment>The described resource interacts with the referenced resource through one or more interfaces. The reason for interaction can range from information exchange to monitoring of one resource from another or controlling-actuating the resource.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#AgentID -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/System#AgentID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>An ID of the agent.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#InterfaceName -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/System#InterfaceName">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#Environment_Interface"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Name of the interface exposed by an agent.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#SystemDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/System#SystemDescription">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A textual description of the system.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#SystemName -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.asepaper.net/System#SystemName">
+        <rdfs:domain rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A name for the system.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Abstract -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Abstract">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:comment>Abstract systems are properties, qualities, mathematical constructs or conceptual models which only exist when manifested in some physical or cyber embodiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Agent -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Agent">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment> A system that can act on its own, sense the environment and produce changes in the world.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Arc -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Arc">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment>An arc is an element of a graph that connects two nodes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#CPS_Agent -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#CPS_Agent">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Cyber-Physical_System"/>
+        <rdfs:comment>A cyber-physical agent is a cyber agent embedded into a physical system.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Cyber -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Cyber">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:comment>Cyber systems are those enbodied in a computer or digital device. They can be programs, controllers and algorithms that exist in a computational environment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Cyber-Physical_System -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Cyber-Physical_System">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Cyber"/>
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Physical"/>
+        <rdfs:comment>A cyber-physical system is a sytem with both physical and computational components. They deeply integrate computation, communication and control into physical systems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Declarative_Knowledge -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Declarative_Knowledge">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Knowledge_Base"/>
+        <rdfs:comment>Declarative knowledge are the facts and set of episodes held in an CPS agent&apos;s memory.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Environment_Interface -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Environment_Interface">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment>Responsible for sensing from and act upon the world. Can also receive direct control signals via Communication Interface.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Graph -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Graph">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment>A set of nodes connected by arcs, </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Human -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Human">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Physical"/>
+        <rdfs:comment>A human is a person, a physical agent capable of sensing the environment, making its own decisions and acting on the world.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Knowledge_Base -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Knowledge_Base">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment>A knowledge base is the set of all knowledge held by a cyber-physical agent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Node -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Node">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Abstract"/>
+        <rdfs:comment>A node is an element of a graph, and it is connected to other nodes by arcs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Physical -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Physical">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#System"/>
+        <rdfs:comment>A physical system is one which manifests physically in the world, like devices, objects and so on. In this sense, it  is different from cyber systems and abstract systems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Procedural_Knowledge -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Procedural_Knowledge">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#Knowledge_Base"/>
+        <rdfs:comment>Procedural knowledge is holds information about how the CPS agent can do something in the world through actions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#Reasoner -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#Reasoner">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.asepaper.net/System#CPS_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.cf.asepaper.net/System#System -->
+
+    <owl:Class rdf:about="http://ontologies.cf.asepaper.net/System#System">
+        <rdfs:comment>A set of connected things or parts forming a complex whole. A system can also be used as resource by other systems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
