@@ -164,7 +164,7 @@ public class PDDLGenerator {
                 for (int k = 0; k < parameterData.length; k++){
                     data += parameterData[k];
                     if (k < (currentPredicate.parameters.size() - 1)){
-                        data += ", ";
+                        data += " ";
                     }
                 }
 
@@ -219,7 +219,7 @@ public class PDDLGenerator {
                 for (int k = 0; k < parameterData.length; k++){
                     data += parameterData[k];
                     if (k < (currentPredicate.parameters.size() - 1)){
-                        data += ", ";
+                        data += " ";
                     }
                 }
 
