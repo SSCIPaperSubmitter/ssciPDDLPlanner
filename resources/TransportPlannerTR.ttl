@@ -1,0 +1,174 @@
+@prefix : <http://ontologies.cf.ericsson.net/railwayLogistics#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://creativecommons.org/ns#> .
+@prefix ITS: <http://ontologies.cf.ericsson.net/ITS#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix busModel: <http://ontologies.cf.ericsson.net/busModel#> .
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR> a owl:Ontology ;
+	owl:imports <http://ontologies.cf.ericsson.net/ITS> ;
+	rdfs:comment "Transport Fleet Planner Transformation Rules. This particular TR file contains meta-information required for the PDDL Generator to generate a PDDL problem and domain file, as input to a PDDL Solver. It complements the Transitions and States files." .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasDuration
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasDuration> a owl:AnnotationProperty ;
+	rdfs:comment "This annotation property is used to assign duration to actions." ;
+	rdfs:range <http://ontologies.cf.ericsson.net/Middle#Duration> ;
+	rdfs:domain <http://ontologies.cf.ericsson.net/Middle#Transition> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> a owl:AnnotationProperty ;
+	rdfs:domain <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasParameter
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasParameter> a owl:AnnotationProperty ;
+	rdfs:range <http://ontologies.cf.ericsson.net/Middle#Parameters> ;
+	rdfs:domain <http://ontologies.cf.ericsson.net/System#Procedural_Knowledge> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasTiming
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasTiming> a owl:AnnotationProperty ;
+	rdfs:range xsd:string ;
+	rdfs:domain <http://ontologies.cf.ericsson.net/Middle#ConditionalExpression> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> a owl:AnnotationProperty ;
+	rdfs:domain <http://ontologies.cf.ericsson.net/Middle#Function> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasDropOffPOI
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasDropOffPOI> a owl:ObjectProperty .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#isLocatedAt
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#isLocatedAt> a owl:ObjectProperty .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#isWaitingAt
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#isWaitingAt> a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#Configuration
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#Configuration> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#Road
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#Road> a owl:Class ;
+	rdfs:subClassOf ITS:Route .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#Road_Network
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#Road_Network> a owl:Class ;
+	rdfs:subClassOf ITS:Transportation_Network .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> a owl:Class ;
+	rdfs:comment "PDDL Transformation Rules to be Used by Transport Planner Ontologies"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#drop-passenger-duration
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#drop-passenger-duration> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Duration> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasParameter> "0"^^xsd:nonNegativeInteger .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasActionProperty
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasActionProperty> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "durative-action"^^xsd:string ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> ":durative-action"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasConditionProperty
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasConditionProperty> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "condition"^^xsd:string ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> ":condition"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasCost
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasCost> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "total-cost" ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> "total-cost" ;
+	rdfs:comment "Name of cost parameter" .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasDomain
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasDomain> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "TransportPlanner"^^xsd:string ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> "(define (domain TransportPlanner)"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasEffectProperty
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasEffectProperty> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "effect"^^xsd:string ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> ":effect"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasLanguage
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasLanguage> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#Configuration> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "language"^^xsd:string ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> "PDDL"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasRequirements
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasRequirements> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "Requirements"^^xsd:string ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> "(:requirements :STRIPS :TYPING :FLUENTS :DURATIVE-ACTIONS)"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#move-to-next-poi-duration
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#move-to-next-poi-duration> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Duration> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#pickup-passenger-duration
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#pickup-passenger-duration> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Duration> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasParameter> "0"^^xsd:nonNegativeInteger .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

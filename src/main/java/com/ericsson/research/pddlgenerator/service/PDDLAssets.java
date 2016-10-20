@@ -1,31 +1,28 @@
-package asepaper.pddlgenerator;
+package com.ericsson.research.pddlgenerator.service;
 
-import java.util.List;
 import java.util.Vector;
 
 /**
  * Created by eathkar on 03/05/16.
  */
+
+/*
+ * Raw Assets as for First-Time Parsing
+ */
 public class PDDLAssets {
 
     public Vector<PDDLAction> actions;
-    public Vector<PDDLFunction> functions;
+    public Vector<PDDLPrecondition> preconditions;
+    public Vector<PDDLTransition> transitions;
+    public Vector<PDDLPredicateSet> predicateSets;
     public Vector<PDDLPredicate> predicates;
-    public Vector<PDDLCondition> conditions;
-    public Vector<PDDLEffect> effects;
-    public Vector<PDDLConditionalExpression> conditionalExpressions;
-    public Vector<PDDLDuration> durations;
-    public Vector<PDDLParameter> parameters;
 
     public PDDLAssets(){
         actions = new Vector<PDDLAction>();
-        functions = new Vector<PDDLFunction>();
+        preconditions = new Vector<PDDLPrecondition>();
+        transitions = new Vector<PDDLTransition>();
+        predicateSets = new Vector<PDDLPredicateSet>();
         predicates = new Vector<PDDLPredicate>();
-        conditions = new Vector<PDDLCondition>();
-        effects = new Vector<PDDLEffect>();
-        conditionalExpressions = new Vector<PDDLConditionalExpression>();
-        durations = new Vector<PDDLDuration>();
-        parameters = new Vector<PDDLParameter>();
     }
 }
 
@@ -34,8 +31,9 @@ class PDDLConstants {
     // These paramaters could be configured
     public static String prefix = "";
     public static String modelName = "";
-    public static String domainFileName = "domain-file.pddl";
-    public static String problemFileName = "problem-file.pddl";
+    public static String domainFileName = "domain-file";
+    public static String problemFileName = "problem-file";
+    public static String extensionName = ".pddl";
 
     // These should not be changed unless ontologies are changed !!
     private String predicate_has_parameter = "hasParameter";
@@ -56,6 +54,17 @@ class PDDLConstants {
     private String predicate_hasPredicateList = "hasPredicateList";
     private String predicate_hasPredicate = "hasPredicate";
     private String predicate_hasActionOperator = "hasActionOperator";
+    private String predicate_hasPreconditionExpressionPart = "hasPreconditionExpressionPart";
+    private String predicate_hasPrecondition = "hasPrecondition";
+    private String predicate_hasAction = "hasAction";
+    private String predicate_hasComputation = "hasComputation";
+    private String predicate_hasPreconditionOperator = "hasPreconditionOperator";
+    private String predicate_hasPredicateSet = "hasPredicateSet";
+    private String predicate_hasPredicateSetOperator = "hasPredicateSetOperator";
+    private String predicate_hasPredicateRealName = "hasPredicateRealName";
+    private String predicate_hasPredicateOperatorAmount = "hasPredicateOperatorAmount";
+    private String predicate_hasPredicateOperator = "hasPredicateOperator";
+    private String predicate_hasPredicateTiming = "hasPredicateTiming";
 
     private String object_action = "Middle#Action";
     private String object_conditionalExpression = "Middle#ConditionalExpression";
@@ -66,6 +75,12 @@ class PDDLConstants {
     private String object_Function = "Middle#Function";
     private String object_Parameters = "Middle#Parameters";
     private String object_PredicateList = "Middle#PredicateList";
+    private String object_Transition = "Middle#Transition";
+    private String object_Precondition = "Middle#Precondition";
+    private String object_PredicateSet = "Middle#PredicateSet";
+    private String object_Remove = "Middle#Remove";
+    private String object_Add = "Middle#Add";
+    //private String object_PredicateSetOperator = "Middle#Predicat"
 
     // NON-Modeled - "hardcoded" features
     private String domain = "transportPlanner";
@@ -74,11 +89,14 @@ class PDDLConstants {
     public enum predicateType{
         HAS_PARAMETER, HAS_TIMING, HAS_VALUE, HAS_OPERATOR, HAS_NAME, IS_DURATIVE_ACTION, HAS_CONDITION_EXPRESSION_PART,
         HAS_CONDITION_OPERATOR, SUBCLASS_OF, HAS_NEGATION, HAS_CONDITION, HAS_DURATION, HAS_EFFECT, HAS_EFFECT_OPERATOR,
-        TYPE, HAS_PREDICATE_LIST, HAS_PREDICATE, HAS_ACTION_OPERATOR
+        TYPE, HAS_PREDICATE_LIST, HAS_PREDICATE, HAS_ACTION_OPERATOR, HAS_PRECONDITION_EXPRESSION_PART, HAS_PRECONDITION,
+        HAS_COMPUTATION, HAS_ACTION, HAS_PRECONDITION_OPERATOR, HAS_PREDICATE_SET, HAS_PREDICATE_SET_OPERATOR,
+        HAS_PREDICATE_REAL_NAME, HAS_PREDICATE_OPERATOR, HAS_PREDICATE_OPERATOR_AMOUNT, HAS_PREDICATE_TIMING
     }
 
     public enum objectType{
-        ACTION, CONDITIONAL_EXPRESSION, DURATION, CONDITION, EFFECT, PREDICATE, FUNCTION, PARAMETER, PREDICATE_LIST
+        ACTION, CONDITIONAL_EXPRESSION, DURATION, CONDITION, EFFECT, PREDICATE, FUNCTION, PARAMETER, PREDICATE_LIST,
+        TRANSITION, PRECONDITION, PREDICATE_SET, PREDICATE_SET_OPERATOR, REMOVE, ADD
     }
 
     public PDDLConstants(String arg_prefix, String arg_modelName){ // dont necessarily have to input these
@@ -86,7 +104,7 @@ class PDDLConstants {
         modelName = arg_modelName;
     }
 
-    public String removePrefixes(String input){
+    public static String removePrefixes(String input){
         if (prefix.isEmpty() && modelName.isEmpty()){
             int hashIndex = input.indexOf("#");
             return input.substring(hashIndex + 1, input.length());
@@ -139,6 +157,28 @@ class PDDLConstants {
                 return predicate_hasPredicate;
             case HAS_ACTION_OPERATOR:
                 return predicate_hasActionOperator;
+            case HAS_PRECONDITION_EXPRESSION_PART:
+                return predicate_hasPreconditionExpressionPart;
+            case HAS_ACTION:
+                return predicate_hasAction;
+            case HAS_COMPUTATION:
+                return predicate_hasComputation;
+            case HAS_PRECONDITION:
+                return predicate_hasPrecondition;
+            case HAS_PRECONDITION_OPERATOR:
+                return predicate_hasPreconditionOperator;
+            case HAS_PREDICATE_SET:
+                return predicate_hasPredicateSet;
+            case HAS_PREDICATE_SET_OPERATOR:
+                return predicate_hasPredicateSetOperator;
+            case HAS_PREDICATE_REAL_NAME:
+                return predicate_hasPredicateRealName;
+            case HAS_PREDICATE_OPERATOR:
+                return predicate_hasPredicateOperator;
+            case HAS_PREDICATE_OPERATOR_AMOUNT:
+                return predicate_hasPredicateOperatorAmount;
+            case HAS_PREDICATE_TIMING:
+                return predicate_hasPredicateTiming;
         }
         return null;
     }
@@ -163,6 +203,16 @@ class PDDLConstants {
                 return prefix+object_Parameters;
             case PREDICATE_LIST:
                 return prefix+object_PredicateList;
+            case TRANSITION:
+                return prefix+object_Transition;
+            case PRECONDITION:
+                return prefix+object_Precondition;
+            case PREDICATE_SET:
+                return prefix+object_PredicateSet;
+            case REMOVE:
+                return prefix+object_Remove;
+            case ADD:
+                return prefix+object_Add;
         }
         return null;
     }
@@ -180,7 +230,7 @@ class PDDLRaw {
     }
 }
 
-
+/*
 class PDDLFunction {
     public String name;
     public Vector<String> parameters;
@@ -196,30 +246,54 @@ class PDDLFunction {
         realname = "";
     }
 }
-
+*/
 class PDDLPredicate {
 
     public String name;
     public Vector<String> parameters;
-    public String realname; //where applicable
-
-    // used by problem file generator
-    public String type;
-    public boolean isPred;
-    public String hasValue;
-    public String hasOperator;
+    public String encapsulatingMethod;
+    public String realname;
+    public String operatorAmount;
+    public String operator;
+    public String hasTiming;
 
     public PDDLPredicate(String predicateName){
         name = predicateName;
         parameters = new Vector<String>();
+        encapsulatingMethod = "";
         realname = "";
-        type = "";
-        isPred = false;
-        hasOperator = "";
-        hasValue = "";
+        operatorAmount = "";
+        operator = "";
+        hasTiming = "";
+    }
+
+    public PDDLPredicate(String predicateName, String method){
+        name = predicateName;
+        parameters = new Vector<String>();
+        encapsulatingMethod = method;
+        realname = "";
+        operatorAmount = "";
+        operator = "";
+        hasTiming = "";
+    }
+
+    public void addParameter(String parameter){
+        parameters.add(parameter);
     }
 }
 
+class PDDLPredicateSet{
+    public String name;
+
+    public Vector<PDDLPredicate> predicates;
+
+    public PDDLPredicateSet(String setName){
+        name = setName;
+        predicates = new Vector<PDDLPredicate>();
+    }
+}
+
+/*
 // This class is exclusively used by the problem file
 class PDDLPredicateList{
     String name;
@@ -230,14 +304,14 @@ class PDDLPredicateList{
         list = new Vector<PDDLPredicate>();
     }
 }
-
+*/
 class PDDLModel {
     public String[] types;
     public String[] predicateTypes;
     public String[] functionTypes;
     public String dataToReturn;
 }
-
+/*
 class PDDLObjectCollection {
     public Vector<PDDLObject> data;
     public String datatype;
@@ -261,20 +335,15 @@ class PDDLObject {
         name = arg_name;
         type = arg_type;
     }
-}
+}*/
 
-class PDDLAction {
-
+class PDDLTransition {
     private String operator = ""; // Used in problem file
 
-    public PDDLAction(String primitiveName){
+    public PDDLTransition(String primitiveName){
         name = primitiveName;
         isDurativeAction = false; // assumed to be false a priori
-        condition = new Vector<PDDLCondition>(); // assumed to be null a priori
-        effect = new Vector<PDDLEffect>();
-        parameters = new Vector<PDDLParameter>();
-        duration = new Vector<PDDLDuration>();
-        predicateList = new PDDLPredicateList("");
+
         predicateListName = "";
     }
 
@@ -296,7 +365,7 @@ class PDDLAction {
     // --- end pf use
 
     public boolean sanityCheck(){
-        if (condition == null || effect == null || duration == null || parameters == null){
+        if (computation == null || action == null || precondition == null){
             return false;
         }
         else return true;
@@ -306,28 +375,51 @@ class PDDLAction {
 
     // These are used by the model file
     public boolean isDurativeAction;
-    public Vector<PDDLCondition> condition;
-    public Vector<PDDLEffect> effect;
-    public Vector<PDDLParameter> parameters;
-    public Vector<PDDLDuration> duration;
 
-    // These are used by the problem file
-    public PDDLPredicateList predicateList;
+    public PDDLComputation computation;
+    public PDDLAction action;
+    public PDDLPrecondition precondition;
     public String predicateListName;
+}
+
+class PDDLComputation{
+    public String name;
+
+    public PDDLComputation(String computationName){
+        name = computationName;
+    }
+}
+
+class PDDLPrecondition{
+    public String name;
+    public String predicateSetOperator;
+    public PDDLPredicateSet predicateSet;
+    public PDDLPrecondition(String preconditionName){
+        name = preconditionName;
+    }
+}
+
+class PDDLAction {
+    public String name;
+    public PDDLPredicateSet predicateSet;
+    public String predicateSetOperator;
+    public PDDLAction(String primitiveName){
+        name = primitiveName;
+    }
 }
 
 class PDDLCondition {
     public String name;
-    public Vector<PDDLConditionalExpression> conditional_expressions;
+   // public Vector<PDDLConditionalExpression> conditional_expressions;
     public String conditionalOperator;
 
     public PDDLCondition(String predicateName){
         name = predicateName;
-        conditional_expressions = new Vector<PDDLConditionalExpression>();
+       // conditional_expressions = new Vector<PDDLConditionalExpression>();
         conditionalOperator = "";
     }
 }
-
+/*
 class PDDLConditionalExpression {
     public String name;
     public String timing;
@@ -383,4 +475,4 @@ class PDDLInstance{
         instanceName = name;
         instanceType = type;
     }
-}
+}*/
