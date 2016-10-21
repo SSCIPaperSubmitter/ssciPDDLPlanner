@@ -5,14 +5,26 @@ package com.ericsson.research.pddlgenerator.service;
  */
 public class TRassets {
 
+    public TRassets(boolean isPredicateType, String predicateType){
+        if(isPredicateType){
+            type = predicateType;
+            istype = isPredicateType;
+            ID = predicateType;
+        }
+    }
+
+    public TRassets(String IDarg){
+        ID = IDarg;
+    }
+
+    private boolean istype;
+    private String type;
     private String ID;
     private String name;
     private String value;
 
 
-    public TRassets(String IDarg){
-        ID = IDarg;
-    }
+
 
     public void setName(String argN){
         name = argN;
@@ -33,4 +45,8 @@ public class TRassets {
     public String getValue() {
         return value;
     }
+
+    public String getType(){ return type; }
+
+    public boolean isType(){ return istype; }
 }

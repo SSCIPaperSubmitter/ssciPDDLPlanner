@@ -89,6 +89,11 @@
 <http://ontologies.cf.ericsson.net/TransportPlannerTR#Configuration> a owl:Class ;
 	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> .
 # 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#PredicateTypes
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#PredicateTypes> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> .
+# 
 # http://ontologies.cf.ericsson.net/TransportPlannerTR#Road
 
 <http://ontologies.cf.ericsson.net/TransportPlannerTR#Road> a owl:Class ;
@@ -103,6 +108,21 @@
 
 <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> a owl:Class ;
 	rdfs:comment "PDDL Transformation Rules to be Used by Transport Planner Ontologies"^^xsd:string .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#bus
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#bus> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#PredicateTypes> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#busstop
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#busstop> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#PredicateTypes> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#coordinate
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#coordinate> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#PredicateTypes> .
 # 
 # http://ontologies.cf.ericsson.net/TransportPlannerTR#drop-passenger-duration
 
@@ -164,6 +184,11 @@
 
 <http://ontologies.cf.ericsson.net/TransportPlannerTR#move-to-next-poi-duration> a owl:Class ;
 	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Duration> .
+# 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#passenger
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#passenger> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#PredicateTypes> .
 # 
 # http://ontologies.cf.ericsson.net/TransportPlannerTR#pickup-passenger-duration
 

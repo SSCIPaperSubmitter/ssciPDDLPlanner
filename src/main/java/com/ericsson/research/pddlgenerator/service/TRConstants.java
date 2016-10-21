@@ -13,4 +13,5 @@ public class TRConstants {
     public static String hasActionRel = "hasActionProperty";
     public static String hasEffectRel = "hasEffectProperty";
     public static String hasConditionRel = "hasConditionProperty";
+    public static String isSubclassOf = "subClassOf";
 }

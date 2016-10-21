@@ -379,7 +379,7 @@
 	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
 	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_1" , "s0_0" ;
 	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerpickupcoordinate"^^xsd:string .
+	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string .
 # 
 # http://ontologies.cf.ericsson.net/busTransitions#passengerpickupwait
 
@@ -390,6 +390,7 @@
 
 :passengerserviced a owl:Class ;
 	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
+	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p_0" ;
 	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerserviced"^^xsd:string .
 # 
 # http://ontologies.cf.ericsson.net/busTransitions#passengerserviced-add-drop-passenger

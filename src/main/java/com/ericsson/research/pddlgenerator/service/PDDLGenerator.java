@@ -42,33 +42,113 @@ public class PDDLGenerator {
         PDDLAssets transitionsModel = processDomainFile(transitions_file_statement_iterator, trModel);
 
         // Generate output
-
         return generateOutput(trModel, transitionsModel);
     }
 
+    private String[] generateOutput(Vector<TRassets> transformationRules, PDDLAssets transitionData){
+        String[] array = new String[2];
+
+        if (!(TR_GetValueForID(transformationRules, TRConstants.hasLanguageRel)).isEmpty()) {
+            String language = TR_GetValueForID(transformationRules, TRConstants.hasLanguageRel);
+            if (language.compareToIgnoreCase("PDDL") == 0){
+
+                // Read transformation rules, add basic metadata (domain and requirements)
+                String domain = TR_GetValueForID(transformationRules, TRConstants.hasDomainRel);
+                String requirements = TR_GetValueForID(transformationRules, TRConstants.hasRequirementsRel);
+                String actionName = TR_GetValueForID(transformationRules, TRConstants.hasActionRel);
+                String conditionName = TR_GetValueForID(transformationRules, TRConstants.hasConditionRel);
+                String effectName = TR_GetValueForID(transformationRules, TRConstants.hasEffectRel);
+
+                // Domain & Requirements (hardcoded)
+                array[0] = domain + "\n\t" + requirements + "\n";
+                // Types
+                array[0] += TR_GetTypes(transformationRules);
+                // Predicates and Functions
+                //TODO: Change name of the below to GetPredicatesAndFunctions, do necessary changes in model
+                array[0] += PDDL_GetPredicates(transitionData);
+                // Transitions (Actions in PDDL)
+                array[0] += PDDL_GetActions(transitionData, actionName, conditionName, effectName);
+
+                array[0] += "\n)";
+            }
+            else {
+                // placeholder for more languages
+            }
+        }
+
+        else {
+            return null;
+        }
+
+        System.out.println(array[0]);
+        return array;
+    }
+
     // Returns predicates in PDDL from transitions file
-    private String PDDL_GetPredicates(PDDLAssets transitions){
+    private String PDDL_GetPredicates(PDDLAssets assets){
 
-        String predicates = "";
+        String parameterData = "";
+        Vector<PDDLPredicate> tempArray = new Vector<PDDLPredicate>();
 
-        Iterator<PDDLPredicate> iter = transitions.predicates.iterator();
+        for (int trIterator = 0; trIterator < assets.transitions.size(); trIterator++) {
+            PDDLTransition currentTR = assets.transitions.elementAt(trIterator);
 
-        if(transitions.predicates.size() > 0){
-            predicates = "\t(:predicates\n";
+            Vector<PDDLPredicate> PDDLConditionExpression = currentTR.precondition.predicateSet.predicates;
+            Vector<PDDLPredicate> PDDLEffectExpression = currentTR.action.predicateSet.predicates;
+
+            for (int i = 0; i < PDDLConditionExpression.size(); i++) {
+                PDDLPredicate currentPredicate = PDDLConditionExpression.elementAt(i);
+                boolean hasPredicate = false;
+                for (int tempArrayIterator = 0; tempArrayIterator < tempArray.size(); tempArrayIterator++) {
+                    if (currentPredicate.realname.compareTo(tempArray.elementAt(tempArrayIterator).realname) == 0) {
+                        hasPredicate = true;
+                    }
+                }
+                if (!hasPredicate) {
+                    tempArray.add(currentPredicate);
+                }
+            }
+
+            for (int i = 0; i < PDDLEffectExpression.size(); i++) {
+                PDDLPredicate currentPredicate = PDDLEffectExpression.elementAt(i);
+                boolean hasPredicate = false;
+                for (int tempArrayIterator = 0; tempArrayIterator < tempArray.size(); tempArrayIterator++) {
+                    if (currentPredicate.realname.compareTo(tempArray.elementAt(tempArrayIterator).realname) == 0) {
+                        hasPredicate = true;
+                    }
+                }
+                if (!hasPredicate) {
+                    tempArray.add(currentPredicate);
+                }
+            }
         }
 
-        while (iter.hasNext()){
-            PDDLPredicate currentPredicate = iter.next();
-            predicates += "\t\t(" +PDDLConstants.removePrefixes(currentPredicate.name)+"\n";
-
-
+        // Synthesis of Transition code
+        if (tempArray.size() > 0){
+            parameterData += "\n\t:predicates (";
+            for (int i = 0; i < tempArray.size(); i++){
+                // Exlusion of total-cost
+                if(tempArray.elementAt(i).realname.compareToIgnoreCase("total-cost") != 0) {
+                    if (!tempArray.elementAt(i).realname.isEmpty()) {
+                        parameterData += "\n\t\t(" + tempArray.elementAt(i).realname;
+                        //System.out.println (tempArray.elementAt(i).name+" parameter 0 -> "+tempArray.elementAt(i).parameters.elementAt(0));
+                        if (tempArray.elementAt(i).parameters.size() > 0) {
+                            parameterData += " ";
+                        }
+                        for (int parameterIterator = 0; parameterIterator < tempArray.elementAt(i).parameters.size(); parameterIterator++) {
+                            parameterData += "?" + tempArray.elementAt(i).parameters.elementAt(parameterIterator);
+                            if (parameterIterator < tempArray.elementAt(i).parameters.size() - 1) {
+                                parameterData += " ";
+                            }
+                        }
+                        parameterData += ")";
+                    }
+                }
+            }
+            parameterData += "\n\t)\n";
         }
 
-        if(transitions.predicates.size() > 0){
-            predicates += "\t)\n";
-        }
-
-        return predicates;
+        return parameterData;
     }
 
     private String PDDL_GetActions(PDDLAssets transitionData, String actionName, String conditionName, String effectName){
@@ -90,13 +170,13 @@ public class PDDLGenerator {
                     // Condition Processing
                     Vector<PDDLPredicate> PDDLConditionExpression = currentTR.precondition.predicateSet.predicates;
                     PDDLActions += "\n\t\t" + conditionName + " (" + currentTR.precondition.predicateSetOperator.toLowerCase()+"\n";
-                    PDDLActions += processPredicatesPrecondition(PDDLConditionExpression);
+                    PDDLActions += PDDL_GetActions_processPredicatesPrecondition(PDDLConditionExpression);
                     PDDLActions += "\t\t)\n";
 
                     // Effect processing
                     Vector<PDDLPredicate> PDDLEffectExpression = currentTR.action.predicateSet.predicates;
                     PDDLActions += "\n\t\t" + effectName + " (" + currentTR.action.predicateSetOperator.toLowerCase() + "\n";
-                    PDDLActions += processPredicatesAction(PDDLEffectExpression);
+                    PDDLActions += PDDL_GetActions_processPredicatesAction(PDDLEffectExpression);
                     PDDLActions += "\t\t)\n";
 
                     PDDLActions += "\t)\n";
@@ -107,7 +187,18 @@ public class PDDLGenerator {
         return PDDLActions;
     }
 
-    private String processPredicatesAction(Vector<PDDLPredicate> predicates){
+    // TODO: Process parameters for each action here - do we need an extra entity and subentities type (coordinate, ...) and then a
+    // relationship in every parameter hasParameterType ?
+    private String PDDL_GetActions_processParameters (PDDLAction currentAction) {
+        String parameterData = "";
+
+
+
+
+        return parameterData;
+    }
+
+    private String PDDL_GetActions_processPredicatesAction(Vector<PDDLPredicate> predicates){
         String data = "";
         boolean hasAddOperator;
         boolean hasRemoveOperator;
@@ -194,7 +285,7 @@ public class PDDLGenerator {
         return data;
     }
 
-    private String processPredicatesPrecondition(Vector<PDDLPredicate> predicates){
+    private String PDDL_GetActions_processPredicatesPrecondition(Vector<PDDLPredicate> predicates){
         String data = "";
         boolean operatorFlag = false;
         for (int i = 0; i<predicates.size(); i++){
@@ -241,46 +332,31 @@ public class PDDLGenerator {
         return data;
     }
 
-    private String[] generateOutput(Vector<TRassets> transformationRules, PDDLAssets transitionData){
-        String[] array = new String[2];
+    private String TR_GetTypes(Vector<TRassets> input){
+        String data = "";
+        boolean hasData = false;
 
-        if (!(getTRValueForID(transformationRules, TRConstants.hasLanguageRel)).isEmpty()) {
-            String language = getTRValueForID(transformationRules, TRConstants.hasLanguageRel);
-            if (language.compareToIgnoreCase("PDDL") == 0){
-
-                // Read transformation rules, add basic metadata (domain and requirements)
-                String domain = getTRValueForID(transformationRules, TRConstants.hasDomainRel);
-                String requirements = getTRValueForID(transformationRules, TRConstants.hasRequirementsRel);
-                String actionName = getTRValueForID(transformationRules, TRConstants.hasActionRel);
-                String conditionName = getTRValueForID(transformationRules, TRConstants.hasConditionRel);
-                String effectName = getTRValueForID(transformationRules, TRConstants.hasEffectRel);
-                System.out.println("Language Detected: PDDL (domain "+domain+")");
-                array[0] = domain + "\n\t" + requirements + "\n";
-
-                //TODO: Predicates and Actions
-                // Predicates
-                // array[0] += PDDL_GetPredicates(transitionData);
-
-                // Transitions (Actions in PDDL)
-                array[0] += PDDL_GetActions(transitionData, actionName, conditionName, effectName);
-
-
-                array[0] += "\n)";
-            }
-            else {
-                // TODO: Add support for more languages here
+        for (int i = 0; i < input.size(); i++){
+            TRassets currentAsset = input.elementAt(i);
+            if (currentAsset.isType()){
+                if (data.isEmpty()){
+                    data += "\n\t(:types";
+                    hasData = true;
+                }
+                String type = PDDLConstants.removePrefixes(currentAsset.getType());
+                data += " " + type;
+                //data += " " + currentAsset.getType();
             }
         }
 
-        else {
-            return null;
+        if(hasData){
+            data += ")\n";
         }
 
-        System.out.println(array[0]);
-        return array;
+        return data;
     }
 
-    private String getTRValueForID(Vector<TRassets> trRules, String ID){
+    private String TR_GetValueForID(Vector<TRassets> trRules, String ID){
 
         for (int i=0; i<trRules.size(); i++){
             //System.out.println("ID Scan: "+trRules.elementAt(i).getID()+" ID "+ID);
@@ -304,7 +380,7 @@ public class PDDLGenerator {
             Resource p = stmt.getPredicate();
             RDFNode o = stmt.getObject();
 
-            //System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
+        //    System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
             rawData.add(new PDDLRaw(s.toString(), p.toString(), o.toString()));
         }
 
@@ -314,9 +390,13 @@ public class PDDLGenerator {
         while(rawDataIterator.hasNext()){
             PDDLRaw currentDatum = rawDataIterator.next();
             if (currentDatum.predicate.endsWith(TRConstants.hasNameRel))
-                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true);
+                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, false);
             else if (currentDatum.predicate.endsWith(TRConstants.hasValueRel))
-                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, false);
+                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, false, false);
+            else if (currentDatum.predicate.endsWith(TRConstants.isSubclassOf)){
+                if (currentDatum.object.endsWith("PredicateTypes"))
+                    safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, true);
+            }
         }
 
         /*for (int a = 0; a < trassets.size(); a++){
@@ -329,24 +409,28 @@ public class PDDLGenerator {
     }
 
     // Safe insert of Transformation Rules (avoids duplicate entries)
-    private void safeInsertTransformationRuleData(String subject, String data, Vector<TRassets> trRules, boolean nameData){
+    private void safeInsertTransformationRuleData(String subject, String data, Vector<TRassets> trRules, boolean nameData, boolean isPredicateType){
 
-        for (int i=0; i < trRules.size(); i++){
-            if (subject.compareTo(trRules.elementAt(i).getID()) == 0){
-                if (nameData)
-                    trRules.elementAt(i).setName(data);
-                else
-                    trRules.elementAt(i).setValue(data);
-                return;
+        if (!isPredicateType) {
+            for (int i = 0; i < trRules.size(); i++) {
+                if (subject.compareTo(trRules.elementAt(i).getID()) == 0) {
+                    if (nameData)
+                        trRules.elementAt(i).setName(data);
+                    else
+                        trRules.elementAt(i).setValue(data);
+                    return;
+                }
             }
+
+            trRules.add(new TRassets(subject));
+            if (nameData)
+                trRules.lastElement().setName(data);
+            else
+                trRules.lastElement().setValue(data);
         }
-
-        trRules.add(new TRassets(subject));
-        if (nameData)
-            trRules.lastElement().setName(data);
-        else
-            trRules.lastElement().setValue(data);
-
+        else {
+            trRules.add(new TRassets(true, subject));
+        }
 
         return;
     }
