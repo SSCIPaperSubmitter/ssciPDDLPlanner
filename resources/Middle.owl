@@ -130,6 +130,20 @@
     
 
 
+    <!-- http://ontologies.cf.ericsson.net/Middle#isFunction -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologies.cf.ericsson.net/Middle#isFunction"/>
+    
+
+
+    <!-- http://ontologies.cf.ericsson.net/Middle#isOfType -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologies.cf.ericsson.net/Middle#isOfType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -523,9 +537,7 @@
 
     <!-- http://ontologies.cf.ericsson.net/Middle#isOfType -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/Middle#isOfType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/Middle#isOfType"/>
     
 
 

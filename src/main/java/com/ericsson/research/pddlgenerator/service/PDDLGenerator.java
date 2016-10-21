@@ -64,8 +64,7 @@ public class PDDLGenerator {
                 // Types
                 array[0] += TR_GetTypes(transformationRules);
                 // Predicates and Functions
-                //TODO: Change name of the below to GetPredicatesAndFunctions, do necessary changes in model
-                array[0] += PDDL_GetPredicates(transitionData);
+                array[0] += PDDL_GetPredicatesAndFunctions(transitionData, transformationRules);
                 // Transitions (Actions in PDDL)
                 array[0] += PDDL_GetActions(transitionData, actionName, conditionName, effectName);
 
@@ -85,7 +84,7 @@ public class PDDLGenerator {
     }
 
     // Returns predicates in PDDL from transitions file
-    private String PDDL_GetPredicates(PDDLAssets assets){
+    private String PDDL_GetPredicatesAndFunctions(PDDLAssets assets, Vector<TRassets> transformationRules){
 
         String parameterData = "";
         Vector<PDDLPredicate> tempArray = new Vector<PDDLPredicate>();
@@ -127,16 +126,16 @@ public class PDDLGenerator {
         if (tempArray.size() > 0){
             parameterData += "\n\t:predicates (";
             for (int i = 0; i < tempArray.size(); i++){
-                // Exlusion of total-cost
+                // Exclusion of total-cost
                 if(tempArray.elementAt(i).realname.compareToIgnoreCase("total-cost") != 0) {
                     if (!tempArray.elementAt(i).realname.isEmpty()) {
                         parameterData += "\n\t\t(" + tempArray.elementAt(i).realname;
-                        //System.out.println (tempArray.elementAt(i).name+" parameter 0 -> "+tempArray.elementAt(i).parameters.elementAt(0));
                         if (tempArray.elementAt(i).parameters.size() > 0) {
                             parameterData += " ";
                         }
                         for (int parameterIterator = 0; parameterIterator < tempArray.elementAt(i).parameters.size(); parameterIterator++) {
-                            parameterData += "?" + tempArray.elementAt(i).parameters.elementAt(parameterIterator);
+                            String parameterType = PDDL_GetParameterType(tempArray.elementAt(i), tempArray.elementAt(i).parameters.elementAt(parameterIterator));
+                            parameterData += "?" + tempArray.elementAt(i).parameters.elementAt(parameterIterator) + " - " + parameterType;
                             if (parameterIterator < tempArray.elementAt(i).parameters.size() - 1) {
                                 parameterData += " ";
                             }
@@ -148,7 +147,73 @@ public class PDDLGenerator {
             parameterData += "\n\t)\n";
         }
 
-        return parameterData;
+        // Function Parsing and code synthesis, we need the Trasnformation Rules data vector for this ...
+        boolean hasFunction = false;
+        String functionData = "";
+        for (int assetsIterator = 0; assetsIterator < transformationRules.size(); assetsIterator++){
+            TRassets currentAsset = transformationRules.elementAt(assetsIterator);
+
+            if (currentAsset.isFunction()){
+                if (!hasFunction){
+                    hasFunction = true;
+                    functionData = "\n\t(:functions";
+                }
+                String functionName = currentAsset.getName();
+                functionData += "\n\t\t(" + functionName;
+
+                if (currentAsset.getFunctionParameterNames().size() > 0){
+
+                    for (int functionParametersIterator = 0;
+                         functionParametersIterator < currentAsset.getFunctionParameterNames().size();
+                         functionParametersIterator++){
+
+                        String currentParameter = currentAsset.getFunctionParameterNames().elementAt(functionParametersIterator);
+                        String currentParameterIndex = currentParameter.substring(currentParameter.indexOf("_"), currentParameter.length());
+
+                        for (int functionTypesIterator = 0;
+                             functionTypesIterator < currentAsset.getFunctionParameterTypes().size();
+                             functionTypesIterator++){
+
+                            String currentType = currentAsset.getFunctionParameterTypes().elementAt(functionTypesIterator);
+                            System.out.println("TYPE: "+currentType);
+                            String currentTypeIndex = currentType.substring(currentType.indexOf("_"), currentType.length());
+
+                            if ( currentTypeIndex.compareTo(currentParameterIndex) == 0){
+                                functionData += " ?" +
+                                        currentParameter.substring(0, currentParameter.indexOf("_"))
+                                            + " - "
+                                            + currentType.substring(0, currentType.indexOf("_"));
+                            }
+                        }
+                    }
+                }
+                functionData += ")";
+            }
+        }
+        if(hasFunction){
+            functionData += "\n\t)";
+        }
+
+        return parameterData + functionData;
+    }
+
+    private String PDDL_GetParameterType(PDDLPredicate predicate, String parameterName){
+        String parameterType = "";
+
+        // Get Parameter Index
+        String parameterIndex = parameterName.substring(parameterName.indexOf("_"), parameterName.length());
+
+        for (int i = 0; i < predicate.parameterTypes.size(); i++){
+            if(predicate.parameterTypes.elementAt(i).endsWith(parameterIndex)){
+
+                parameterType = predicate.parameterTypes.elementAt(i).substring(
+                        0,
+                        predicate.parameterTypes.elementAt(i).indexOf("_"));
+                return parameterType;
+            }
+        }
+
+        return parameterType;
     }
 
     private String PDDL_GetActions(PDDLAssets transitionData, String actionName, String conditionName, String effectName){
@@ -185,17 +250,6 @@ public class PDDLGenerator {
         }
 
         return PDDLActions;
-    }
-
-    // TODO: Process parameters for each action here - do we need an extra entity and subentities type (coordinate, ...) and then a
-    // relationship in every parameter hasParameterType ?
-    private String PDDL_GetActions_processParameters (PDDLAction currentAction) {
-        String parameterData = "";
-
-
-
-
-        return parameterData;
     }
 
     private String PDDL_GetActions_processPredicatesAction(Vector<PDDLPredicate> predicates){
@@ -368,6 +422,23 @@ public class PDDLGenerator {
         return "";
     }
 
+    private int TR_CheckForFunction(String subjectName, Vector<TRassets> rawData){
+        Iterator<TRassets> rawIterator = rawData.iterator();
+        int i = 0;
+        while(rawIterator.hasNext()){
+            TRassets current = rawIterator.next();
+            if( (current.getID().compareTo(subjectName)) == 0){
+                if (current.isFunction()) {
+                    //System.out.println(subjectName+"---"+i);
+                    return i;
+                }
+            }
+            i++;
+        }
+
+        return -1;
+    }
+
     private Vector<TRassets> processTransformationRulesFile(StmtIterator iter){
 
         Vector<TRassets> trassets = new Vector<TRassets>();
@@ -380,7 +451,7 @@ public class PDDLGenerator {
             Resource p = stmt.getPredicate();
             RDFNode o = stmt.getObject();
 
-        //    System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
+           //System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
             rawData.add(new PDDLRaw(s.toString(), p.toString(), o.toString()));
         }
 
@@ -390,28 +461,46 @@ public class PDDLGenerator {
         while(rawDataIterator.hasNext()){
             PDDLRaw currentDatum = rawDataIterator.next();
             if (currentDatum.predicate.endsWith(TRConstants.hasNameRel))
-                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, false);
+                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, false, false);
             else if (currentDatum.predicate.endsWith(TRConstants.hasValueRel))
-                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, false, false);
+                safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, false, false, false);
             else if (currentDatum.predicate.endsWith(TRConstants.isSubclassOf)){
-                if (currentDatum.object.endsWith("PredicateTypes"))
-                    safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, true);
+                if (currentDatum.object.endsWith(TRConstants.PREDICATETYPES))
+                    safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, true, false);
+                else if (currentDatum.object.endsWith(TRConstants.FUNCTIONS))
+                    safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, true, true);
             }
         }
 
-        /*for (int a = 0; a < trassets.size(); a++){
-            System.out.println(trassets.elementAt(a).getID() + " NAME " + trassets.elementAt(a).getName() + " VAL "+
-                trassets.elementAt(a).getValue());
-        }*/
+        // Need a second pass for functions, they have parameters
+        rawDataIterator = rawData.iterator();
+        PDDLConstants constants = new PDDLConstants("", "");
+        while (rawDataIterator.hasNext()){
+            PDDLRaw currentDatum = rawDataIterator.next();
+            int index = TR_CheckForFunction(currentDatum.subject, trassets);
+            if (index >= 0){
+                //System.out.println("object: "+currentDatum.object + " predicate "+currentDatum.predicate +  " subject:"+ currentDatum.subject );
+                if(currentDatum.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PREDICATE_REAL_NAME))){
+                    trassets.elementAt(index).setName(currentDatum.object);
+                }
+                else if(currentDatum.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PARAMETER))){
+                    trassets.elementAt(index).functionParameterNames.add(currentDatum.object);
+                }
+                else if(currentDatum.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.IS_OF_TYPE))){
+                    trassets.elementAt(index).functionParameterTypes.add(currentDatum.object);
+                }
+            }
+        }
 
         // Return Raw Vector
         return trassets;
     }
 
-    // Safe insert of Transformation Rules (avoids duplicate entries)
-    private void safeInsertTransformationRuleData(String subject, String data, Vector<TRassets> trRules, boolean nameData, boolean isPredicateType){
 
-        if (!isPredicateType) {
+    private void safeInsertTransformationRuleData(String subject, String data, Vector<TRassets> trRules,
+                                                  boolean nameData, boolean isPredicateType, boolean isFunctionType){
+        // Safe insert of Transformation Rules (avoids duplicate entries)
+        if (!isPredicateType && !isFunctionType) {
             for (int i = 0; i < trRules.size(); i++) {
                 if (subject.compareTo(trRules.elementAt(i).getID()) == 0) {
                     if (nameData)
@@ -428,8 +517,11 @@ public class PDDLGenerator {
             else
                 trRules.lastElement().setValue(data);
         }
-        else {
+        else if (isPredicateType && !isFunctionType){
             trRules.add(new TRassets(true, subject));
+        }
+        else if (isFunctionType){
+            trRules.add(new TRassets(false, subject));
         }
 
         return;
@@ -561,6 +653,10 @@ public class PDDLGenerator {
                            }
                            else if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PREDICATE_TIMING))){
                                assets.predicates.elementAt(stype.vectorPosition).hasTiming = currentTriplet.object;
+                               break;
+                           }
+                           else if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.IS_OF_TYPE))){
+                               assets.predicates.elementAt(stype.vectorPosition).addParameterType(currentTriplet.object);
                                break;
                            }
                    }

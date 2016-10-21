@@ -65,6 +65,7 @@ class PDDLConstants {
     private String predicate_hasPredicateOperatorAmount = "hasPredicateOperatorAmount";
     private String predicate_hasPredicateOperator = "hasPredicateOperator";
     private String predicate_hasPredicateTiming = "hasPredicateTiming";
+    private String predicate_isOfType = "isOfType";
 
     private String object_action = "Middle#Action";
     private String object_conditionalExpression = "Middle#ConditionalExpression";
@@ -91,7 +92,8 @@ class PDDLConstants {
         HAS_CONDITION_OPERATOR, SUBCLASS_OF, HAS_NEGATION, HAS_CONDITION, HAS_DURATION, HAS_EFFECT, HAS_EFFECT_OPERATOR,
         TYPE, HAS_PREDICATE_LIST, HAS_PREDICATE, HAS_ACTION_OPERATOR, HAS_PRECONDITION_EXPRESSION_PART, HAS_PRECONDITION,
         HAS_COMPUTATION, HAS_ACTION, HAS_PRECONDITION_OPERATOR, HAS_PREDICATE_SET, HAS_PREDICATE_SET_OPERATOR,
-        HAS_PREDICATE_REAL_NAME, HAS_PREDICATE_OPERATOR, HAS_PREDICATE_OPERATOR_AMOUNT, HAS_PREDICATE_TIMING
+        HAS_PREDICATE_REAL_NAME, HAS_PREDICATE_OPERATOR, HAS_PREDICATE_OPERATOR_AMOUNT, HAS_PREDICATE_TIMING,
+        IS_OF_TYPE
     }
 
     public enum objectType{
@@ -179,6 +181,8 @@ class PDDLConstants {
                 return predicate_hasPredicateOperatorAmount;
             case HAS_PREDICATE_TIMING:
                 return predicate_hasPredicateTiming;
+            case IS_OF_TYPE:
+                return predicate_isOfType;
         }
         return null;
     }
@@ -251,6 +255,7 @@ class PDDLPredicate {
 
     public String name;
     public Vector<String> parameters;
+    public Vector<String> parameterTypes;
     public String encapsulatingMethod;
     public String realname;
     public String operatorAmount;
@@ -260,6 +265,7 @@ class PDDLPredicate {
     public PDDLPredicate(String predicateName){
         name = predicateName;
         parameters = new Vector<String>();
+        parameterTypes = new Vector<String>();
         encapsulatingMethod = "";
         realname = "";
         operatorAmount = "";
@@ -270,6 +276,7 @@ class PDDLPredicate {
     public PDDLPredicate(String predicateName, String method){
         name = predicateName;
         parameters = new Vector<String>();
+        parameterTypes = new Vector<String>();
         encapsulatingMethod = method;
         realname = "";
         operatorAmount = "";
@@ -280,6 +287,7 @@ class PDDLPredicate {
     public void addParameter(String parameter){
         parameters.add(parameter);
     }
+    public void addParameterType(String type) { parameterTypes.add(type); }
 }
 
 class PDDLPredicateSet{
