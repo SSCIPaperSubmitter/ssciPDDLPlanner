@@ -39,7 +39,7 @@ public class PDDLGenerator {
 
         // Process Transformation Rules, States file, Transitions file
         Vector<TRassets> trModel = processTransformationRulesFile(transformationsRule_file_statement_iterator);
-        PDDLAssets transitionsModel = processDomainFile(transitions_file_statement_iterator, trModel);
+        PDDLAssets transitionsModel = processTransitionsFile(transitions_file_statement_iterator, trModel);
 
         // Generate output
         return generateOutput(trModel, transitionsModel);
@@ -79,7 +79,7 @@ public class PDDLGenerator {
             return null;
         }
 
-        System.out.println(array[0]);
+        // System.out.println(array[0]); - For Verification Purposes, Printing of Domain File
         return array;
     }
 
@@ -128,20 +128,33 @@ public class PDDLGenerator {
             for (int i = 0; i < tempArray.size(); i++){
                 // Exclusion of total-cost
                 if(tempArray.elementAt(i).realname.compareToIgnoreCase("total-cost") != 0) {
-                    if (!tempArray.elementAt(i).realname.isEmpty()) {
-                        parameterData += "\n\t\t(" + tempArray.elementAt(i).realname;
-                        if (tempArray.elementAt(i).parameters.size() > 0) {
-                            parameterData += " ";
-                        }
-                        for (int parameterIterator = 0; parameterIterator < tempArray.elementAt(i).parameters.size(); parameterIterator++) {
-                            String parameterType = PDDL_GetParameterType(tempArray.elementAt(i), tempArray.elementAt(i).parameters.elementAt(parameterIterator));
-                            parameterData += "?" + tempArray.elementAt(i).parameters.elementAt(parameterIterator) + " - " + parameterType;
-                            if (parameterIterator < tempArray.elementAt(i).parameters.size() - 1) {
+
+                    // For non functions  (parameter) elements, start reporting
+                    if (!tempArray.elementAt(i).isFunction) {
+                        if (!tempArray.elementAt(i).realname.isEmpty()) {
+                            parameterData += "\n\t\t(" + tempArray.elementAt(i).realname;
+                            if (tempArray.elementAt(i).parameters.size() > 0) {
                                 parameterData += " ";
                             }
+                            for (int parameterIterator = 0; parameterIterator < tempArray.elementAt(i).parameters.size(); parameterIterator++) {
+                                String parameterType = PDDL_GetParameterType(tempArray.elementAt(i), tempArray.elementAt(i).parameters.elementAt(parameterIterator));
+                                parameterData += "?" + tempArray.elementAt(i).parameters.elementAt(parameterIterator) + " - " + parameterType;
+                                if (parameterIterator < tempArray.elementAt(i).parameters.size() - 1) {
+                                    parameterData += " ";
+                                }
+                            }
+                            parameterData += ")";
                         }
-                        parameterData += ")";
                     }
+                    else if (tempArray.elementAt(i).isFunction){ // add functions to transformation rules
+                        TRassets functionAsset = new TRassets(false, tempArray.elementAt(i).name);
+                        functionAsset.setName(tempArray.elementAt(i).realname);
+                        functionAsset.functionParameterNames = tempArray.elementAt(i).parameters;
+                        functionAsset.functionParameterTypes = tempArray.elementAt(i).parameterTypes;
+                        transformationRules.add(functionAsset);
+                    }
+
+
                 }
             }
             parameterData += "\n\t)\n";
@@ -175,7 +188,6 @@ public class PDDLGenerator {
                              functionTypesIterator++){
 
                             String currentType = currentAsset.getFunctionParameterTypes().elementAt(functionTypesIterator);
-                            System.out.println("TYPE: "+currentType);
                             String currentTypeIndex = currentType.substring(currentType.indexOf("_"), currentType.length());
 
                             if ( currentTypeIndex.compareTo(currentParameterIndex) == 0){
@@ -527,7 +539,7 @@ public class PDDLGenerator {
         return;
     }
 
-    private PDDLAssets processDomainFile(StmtIterator iter, Vector<TRassets> transformationRules) {
+    private PDDLAssets processTransitionsFile(StmtIterator iter, Vector<TRassets> transformationRules) {
 
         //PDDLModel modelToReturn = new PDDLModel();
         PDDLUtil utilityMethods = new PDDLUtil();
@@ -657,6 +669,10 @@ public class PDDLGenerator {
                            }
                            else if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.IS_OF_TYPE))){
                                assets.predicates.elementAt(stype.vectorPosition).addParameterType(currentTriplet.object);
+                               break;
+                           }
+                           else if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.IS_FUNCTION))){
+                               assets.predicates.elementAt(stype.vectorPosition).isFunction = true;
                                break;
                            }
                    }

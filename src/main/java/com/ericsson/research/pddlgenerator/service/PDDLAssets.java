@@ -66,6 +66,7 @@ class PDDLConstants {
     private String predicate_hasPredicateOperator = "hasPredicateOperator";
     private String predicate_hasPredicateTiming = "hasPredicateTiming";
     private String predicate_isOfType = "isOfType";
+    private String predicate_isFunction = "isFunction";
 
     private String object_action = "Middle#Action";
     private String object_conditionalExpression = "Middle#ConditionalExpression";
@@ -93,7 +94,7 @@ class PDDLConstants {
         TYPE, HAS_PREDICATE_LIST, HAS_PREDICATE, HAS_ACTION_OPERATOR, HAS_PRECONDITION_EXPRESSION_PART, HAS_PRECONDITION,
         HAS_COMPUTATION, HAS_ACTION, HAS_PRECONDITION_OPERATOR, HAS_PREDICATE_SET, HAS_PREDICATE_SET_OPERATOR,
         HAS_PREDICATE_REAL_NAME, HAS_PREDICATE_OPERATOR, HAS_PREDICATE_OPERATOR_AMOUNT, HAS_PREDICATE_TIMING,
-        IS_OF_TYPE
+        IS_OF_TYPE, IS_FUNCTION
     }
 
     public enum objectType{
@@ -183,6 +184,8 @@ class PDDLConstants {
                 return predicate_hasPredicateTiming;
             case IS_OF_TYPE:
                 return predicate_isOfType;
+            case IS_FUNCTION:
+                return predicate_isFunction;
         }
         return null;
     }
@@ -261,6 +264,7 @@ class PDDLPredicate {
     public String operatorAmount;
     public String operator;
     public String hasTiming;
+    public boolean isFunction;
 
     public PDDLPredicate(String predicateName){
         name = predicateName;
@@ -271,6 +275,7 @@ class PDDLPredicate {
         operatorAmount = "";
         operator = "";
         hasTiming = "";
+        isFunction = false;
     }
 
     public PDDLPredicate(String predicateName, String method){
@@ -282,6 +287,7 @@ class PDDLPredicate {
         operatorAmount = "";
         operator = "";
         hasTiming = "";
+        isFunction = false;
     }
 
     public void addParameter(String parameter){

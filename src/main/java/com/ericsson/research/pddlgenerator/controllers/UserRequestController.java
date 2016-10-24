@@ -46,7 +46,7 @@ public class UserRequestController {
                 false);
 
         if (result != null)
-            return new ResponseEntity(new GeneratedFiles(result[0], result[1]), HttpStatus.OK);
+            return new ResponseEntity(new GeneratedFiles(result[1], result[0]), HttpStatus.OK);
         else
             return null;
     }
