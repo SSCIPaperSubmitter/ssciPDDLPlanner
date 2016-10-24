@@ -28,24 +28,31 @@ public class PDDLGenerator {
         ByteArrayInputStream transitionsInputStream =
                 new ByteArrayInputStream(transitionsFile.getBytes(Charset.forName("UTF-8")));
 
+        ByteArrayInputStream statesInputStream =
+                new ByteArrayInputStream(statesFile.getBytes(Charset.forName("UTF-8")));
+
         Model model_transitionsFile = ModelFactory.createDefaultModel();
         Model model_transformationsRuleFile = ModelFactory.createDefaultModel();
+        Model model_statesFile = ModelFactory.createDefaultModel();
 
         model_transitionsFile.read(transitionsInputStream, null, "TURTLE");
         model_transformationsRuleFile.read(tfInputStream, null, "TURTLE");
+        model_statesFile.read(statesInputStream, null, "TURTLE");
 
         StmtIterator transitions_file_statement_iterator = model_transitionsFile.listStatements();
         StmtIterator transformationsRule_file_statement_iterator = model_transformationsRuleFile.listStatements();
+        StmtIterator states_file_statement_iterator = model_statesFile.listStatements();
 
         // Process Transformation Rules, States file, Transitions file
         Vector<TRassets> trModel = processTransformationRulesFile(transformationsRule_file_statement_iterator);
         PDDLAssets transitionsModel = processTransitionsFile(transitions_file_statement_iterator, trModel);
+        PDDLAssets statesModel = processStatesFile(states_file_statement_iterator, trModel);
 
         // Generate output
-        return generateOutput(trModel, transitionsModel);
+        return generateOutput(trModel, transitionsModel, statesModel);
     }
 
-    private String[] generateOutput(Vector<TRassets> transformationRules, PDDLAssets transitionData){
+    private String[] generateOutput(Vector<TRassets> transformationRules, PDDLAssets transitionData, PDDLAssets stateData){
         String[] array = new String[2];
 
         if (!(TR_GetValueForID(transformationRules, TRConstants.hasLanguageRel)).isEmpty()) {
@@ -694,6 +701,27 @@ public class PDDLGenerator {
         return assets;
     }
 
+    private PDDLAssets processStatesFile(StmtIterator iter, Vector<TRassets> transformationRules){
+        PDDLAssets assets = new PDDLAssets();
+        //PDDLModel modelToReturn = new PDDLModel();
+        PDDLUtil utilityMethods = new PDDLUtil();
+
+        PDDLConstants constants = new PDDLConstants("", "");
+        Vector<PDDLRaw> rawData = new Vector<PDDLRaw>();
+
+        while (iter.hasNext()) {
+            Statement stmt = iter.next();
+
+            Resource s = stmt.getSubject();
+            Resource p = stmt.getPredicate();
+            RDFNode o = stmt.getObject();
+
+            //System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
+            rawData.add(new PDDLRaw(s.toString(), p.toString(), o.toString()));
+        }
+
+        return assets;
+    }
 }
 
 // Utility data structure
