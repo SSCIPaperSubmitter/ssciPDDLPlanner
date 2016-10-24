@@ -16,6 +16,7 @@ public class PDDLAssets {
     public Vector<PDDLTransition> transitions;
     public Vector<PDDLPredicateSet> predicateSets;
     public Vector<PDDLPredicate> predicates;
+    public Vector<PDDLObject> objects;
 
     public PDDLAssets(){
         actions = new Vector<PDDLAction>();
@@ -23,6 +24,7 @@ public class PDDLAssets {
         transitions = new Vector<PDDLTransition>();
         predicateSets = new Vector<PDDLPredicateSet>();
         predicates = new Vector<PDDLPredicate>();
+        objects = new Vector<PDDLObject>();
     }
 }
 
@@ -82,6 +84,7 @@ class PDDLConstants {
     private String object_PredicateSet = "Middle#PredicateSet";
     private String object_Remove = "Middle#Remove";
     private String object_Add = "Middle#Add";
+    private String object_NamedIndividual = "owl#NamedIndividual";
     //private String object_PredicateSetOperator = "Middle#Predicat"
 
     // NON-Modeled - "hardcoded" features
@@ -99,7 +102,7 @@ class PDDLConstants {
 
     public enum objectType{
         ACTION, CONDITIONAL_EXPRESSION, DURATION, CONDITION, EFFECT, PREDICATE, FUNCTION, PARAMETER, PREDICATE_LIST,
-        TRANSITION, PRECONDITION, PREDICATE_SET, PREDICATE_SET_OPERATOR, REMOVE, ADD
+        TRANSITION, PRECONDITION, PREDICATE_SET, PREDICATE_SET_OPERATOR, REMOVE, ADD, NAMED_INDIVIDUAL
     }
 
     public PDDLConstants(String arg_prefix, String arg_modelName){ // dont necessarily have to input these
@@ -220,6 +223,8 @@ class PDDLConstants {
                 return prefix+object_Remove;
             case ADD:
                 return prefix+object_Add;
+            case NAMED_INDIVIDUAL:
+                return prefix+object_NamedIndividual;
         }
         return null;
     }
@@ -339,17 +344,22 @@ class PDDLObjectCollection {
     public Vector<PDDLObject> getObjects(){
         return data;
     }
-}
+}*/
 
 class PDDLObject {
     public String name;
     public String type;
+    public Vector<String> parameters;
+    public String operator;
+    public String value;
 
     public PDDLObject (String arg_name, String arg_type){
         name = arg_name;
         type = arg_type;
+        parameters = new Vector<String>();
+
     }
-}*/
+}
 
 class PDDLTransition {
     private String operator = ""; // Used in problem file
@@ -415,6 +425,7 @@ class PDDLPrecondition{
 
 class PDDLAction {
     public String name;
+    public String predicateSetName;
     public PDDLPredicateSet predicateSet;
     public String predicateSetOperator;
     public PDDLAction(String primitiveName){

@@ -720,6 +720,76 @@ public class PDDLGenerator {
             rawData.add(new PDDLRaw(s.toString(), p.toString(), o.toString()));
         }
 
+        Iterator<PDDLRaw> iterator = rawData.iterator();
+        while (iterator.hasNext()) {
+
+            PDDLRaw currentTriplet = iterator.next();
+
+            if (currentTriplet.predicate.contains(constants.getPredicateDefinition(PDDLConstants.predicateType.TYPE))
+                    && currentTriplet.object.endsWith(constants.getObjectDefinition(PDDLConstants.objectType.NAMED_INDIVIDUAL))) {
+                boolean found = false;
+                for (int i = 0; i < assets.objects.size(); i++){
+                    if (assets.objects.elementAt(i).name.compareTo(currentTriplet.subject) == 0){
+                        found = true;
+                    }
+                }
+                if (!found){
+                    if (currentTriplet.subject.contains("_")) {
+                        String type = currentTriplet.subject.substring(
+                                currentTriplet.subject.indexOf("#") + 1,
+                                currentTriplet.subject.indexOf("_")
+                        );
+                        assets.objects.add(new PDDLObject(currentTriplet.subject, type));
+                    }
+                }
+            }
+            else if (currentTriplet.predicate.contains(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PARAMETER))) {
+                boolean found = false;
+                for (int i = 0; i < assets.objects.size(); i++){
+                    if (assets.objects.elementAt(i).name.compareTo(currentTriplet.subject) == 0){
+                        assets.objects.elementAt(i).parameters.add(currentTriplet.object);
+                        found = true;
+                    }
+                }
+                if (!found){
+                    String type = "";
+                    if (currentTriplet.subject.contains("_")) {
+                        type = currentTriplet.subject.substring(
+                                currentTriplet.subject.indexOf("#") + 1,
+                                currentTriplet.subject.indexOf("_")
+                        );
+                    }
+                    assets.objects.add(new PDDLObject(currentTriplet.subject, type));
+                }
+            }
+            else if (currentTriplet.predicate.contains(constants.getPredicateDefinition(PDDLConstants.predicateType.TYPE))
+                    && currentTriplet.object.endsWith(constants.getObjectDefinition(PDDLConstants.objectType.ACTION))) {
+                boolean found = false;
+                for (int i = 0; i < assets.actions.size(); i++){
+                    if (assets.actions.elementAt(i).name.compareTo(currentTriplet.subject) == 0){
+                        found = true;
+                    }
+                }
+                if (!found) assets.actions.add(new PDDLAction(currentTriplet.subject));
+            }
+            else if (currentTriplet.predicate.contains(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PREDICATE_LIST))) {
+                boolean found = false;
+                for (int i = 0; i < assets.actions.size(); i++){
+                    if (assets.actions.elementAt(i).name.compareTo(currentTriplet.subject) == 0){
+                        assets.actions.elementAt(i).predicateSetName = currentTriplet.object;
+                        found = true;
+                    }
+                }
+                if (!found){
+                    assets.actions.add(new PDDLAction(currentTriplet.subject));
+                    assets.actions.lastElement().predicateSetName = currentTriplet.object;
+                }
+            }
+
+        }
+
+        // Second parse, connect predicate sets to from actions to named individuals
+
         return assets;
     }
 }
