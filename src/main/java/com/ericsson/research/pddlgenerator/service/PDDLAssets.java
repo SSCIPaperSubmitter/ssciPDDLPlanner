@@ -14,7 +14,7 @@ public class PDDLAssets {
     public Vector<PDDLAction> actions;
     public Vector<PDDLPrecondition> preconditions;
     public Vector<PDDLTransition> transitions;
-    public Vector<PDDLPredicateSet> predicateSets;
+    public Vector<PDDLSet> predicateSets;
     public Vector<PDDLPredicate> predicates;
     public Vector<PDDLObject> objects;
 
@@ -22,7 +22,7 @@ public class PDDLAssets {
         actions = new Vector<PDDLAction>();
         preconditions = new Vector<PDDLPrecondition>();
         transitions = new Vector<PDDLTransition>();
-        predicateSets = new Vector<PDDLPredicateSet>();
+        predicateSets = new Vector<PDDLSet>();
         predicates = new Vector<PDDLPredicate>();
         objects = new Vector<PDDLObject>();
     }
@@ -301,14 +301,16 @@ class PDDLPredicate {
     public void addParameterType(String type) { parameterTypes.add(type); }
 }
 
-class PDDLPredicateSet{
+class PDDLSet{
     public String name;
 
     public Vector<PDDLPredicate> predicates;
+    public Vector<PDDLObject> objects;
 
-    public PDDLPredicateSet(String setName){
+    public PDDLSet(String setName){
         name = setName;
         predicates = new Vector<PDDLPredicate>();
+        objects = new Vector<PDDLObject>();
     }
 }
 
@@ -357,7 +359,8 @@ class PDDLObject {
         name = arg_name;
         type = arg_type;
         parameters = new Vector<String>();
-
+        value = "";
+        operator = "";
     }
 }
 
@@ -417,7 +420,7 @@ class PDDLComputation{
 class PDDLPrecondition{
     public String name;
     public String predicateSetOperator;
-    public PDDLPredicateSet predicateSet;
+    public PDDLSet predicateSet;
     public PDDLPrecondition(String preconditionName){
         name = preconditionName;
     }
@@ -426,7 +429,7 @@ class PDDLPrecondition{
 class PDDLAction {
     public String name;
     public String predicateSetName;
-    public PDDLPredicateSet predicateSet;
+    public PDDLSet predicateSet;
     public String predicateSetOperator;
     public PDDLAction(String primitiveName){
         name = primitiveName;

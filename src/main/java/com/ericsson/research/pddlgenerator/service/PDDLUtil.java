@@ -11,10 +11,10 @@ import java.util.Vector;
 public class PDDLUtil {
     public void addPredicateSetContent (PDDLAssets assets){
         // Adding predicates to predicate sets
-        Iterator<PDDLPredicateSet> predicateSetIterator = assets.predicateSets.iterator();
+        Iterator<PDDLSet> predicateSetIterator = assets.predicateSets.iterator();
         int predicateSetIteratorIndex = 0;
         while(predicateSetIterator.hasNext()){
-            PDDLPredicateSet currentPredicateSet = predicateSetIterator.next();
+            PDDLSet currentPredicateSet = predicateSetIterator.next();
             Iterator<PDDLPredicate> predicateIterator = currentPredicateSet.predicates.iterator();
             int currentPredicateIndex = 0;
             while (predicateIterator.hasNext()){
@@ -165,7 +165,7 @@ public class PDDLUtil {
         Iterator<PDDLPrecondition> preconditionIterator = assets.preconditions.iterator();
         Iterator<PDDLAction> actionIterator = assets.actions.iterator();
         Iterator<PDDLTransition> transitionIterator = assets.transitions.iterator();
-        Iterator<PDDLPredicateSet> predicateSetIterator = assets.predicateSets.iterator();
+        Iterator<PDDLSet> predicateSetIterator = assets.predicateSets.iterator();
         Iterator<PDDLPredicate> predicateIterator = assets.predicates.iterator();
 
         int counter = 0;
@@ -218,7 +218,7 @@ public class PDDLUtil {
         return -1;
     }
 
-    private int entityHasPredicateSet(String entityName, Vector<PDDLPredicateSet> predicateSets){
+    private int entityHasPredicateSet(String entityName, Vector<PDDLSet> predicateSets){
         for (int i = 0; i < predicateSets.size(); i++){
             if (predicateSets.elementAt(i).name.compareTo(entityName) == 0){
                 return i;

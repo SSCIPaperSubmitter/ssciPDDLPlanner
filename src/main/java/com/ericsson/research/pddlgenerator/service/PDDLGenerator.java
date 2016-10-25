@@ -48,16 +48,6 @@ public class PDDLGenerator {
         PDDLAssets transitionsModel = processTransitionsFile(transitions_file_statement_iterator, trModel);
         PDDLAssets statesModel = processStatesFile(states_file_statement_iterator, trModel);
 
-        /*
-
-        for (int i = 0; i < statesModel.objects.size(); i++){
-            System.out.println("Object "+statesModel.objects.elementAt(i).name);
-            System.out.println("\tValue:"+statesModel.objects.elementAt(i).value);
-            for (int k = 0; k < statesModel.objects.elementAt(i).parameters.size(); k++){
-                System.out.println("\tparam["+k+"]:"+statesModel.objects.elementAt(i).parameters.elementAt(k));
-            }
-        }*/
-
         // Generate output
         return generateOutput(trModel, transitionsModel, statesModel);
     }
@@ -68,6 +58,8 @@ public class PDDLGenerator {
         if (!(TR_GetValueForID(transformationRules, TRConstants.hasLanguageRel)).isEmpty()) {
             String language = TR_GetValueForID(transformationRules, TRConstants.hasLanguageRel);
             if (language.compareToIgnoreCase("PDDL") == 0){
+
+                // ------------------------------------------ Transitions File -------------------------------------
 
                 // Read transformation rules, add basic metadata (domain and requirements)
                 String domain = TR_GetValueForID(transformationRules, TRConstants.hasDomainRel);
@@ -86,6 +78,39 @@ public class PDDLGenerator {
                 array[0] += PDDL_GetActions(transitionData, actionName, conditionName, effectName);
 
                 array[0] += "\n)";
+
+                // ------------------------------------------ States File ------------------------------------------
+
+                array[1] = "";
+                for (int i = 0; i < stateData.actions.size(); i++){
+                    PDDLAction currentAction = stateData.actions.elementAt(i);
+                    array[1] += "\t(:"+PDDLConstants.removePrefixes(stateData.actions.elementAt(i).name)+"\n";
+                    for (int k = 0; k < currentAction.predicateSet.objects.size(); k++){
+                        boolean hasValue = false;
+                        String value = "";
+                        if (currentAction.predicateSet.objects.elementAt(k).value.isEmpty())
+                            array[1] += "\t\t("+currentAction.predicateSet.objects.elementAt(k).type;
+                        else {
+                            if (currentAction.predicateSet.objects.elementAt(k).value.contains("^")){
+                                value = currentAction.predicateSet.objects.elementAt(k).value.substring(
+                                        0,
+                                        currentAction.predicateSet.objects.elementAt(k).value.indexOf("^")
+                                );
+                            }
+                            array[1] += "\t\t(= ("+currentAction.predicateSet.objects.elementAt(k).type;
+                            hasValue = true;
+                        }
+                        for (int j = 0; j < currentAction.predicateSet.objects.elementAt(k).parameters.size(); j++){
+                            array[1] += " "+PDDLConstants.removePrefixes(currentAction.predicateSet.objects.elementAt(k).parameters.elementAt(j));
+                        }
+                        if (!hasValue)
+                            array[1] += ")\n";
+                        else
+                            array[1] += ") "+value+")\n";
+                    }
+                }
+
+                System.out.println(array[1]);
             }
             else {
                 // placeholder for more languages
@@ -594,7 +619,7 @@ public class PDDLGenerator {
                 }
                 else if (currentTriplet.predicate.contains(constants.getPredicateDefinition(PDDLConstants.predicateType.SUBCLASS_OF))
                         && currentTriplet.object.endsWith(constants.getObjectDefinition(PDDLConstants.objectType.PREDICATE_SET))) {
-                    assets.predicateSets.add(new PDDLPredicateSet(currentTriplet.subject));
+                    assets.predicateSets.add(new PDDLSet(currentTriplet.subject));
                 }
                 else if (currentTriplet.predicate.contains(constants.getPredicateDefinition(PDDLConstants.predicateType.SUBCLASS_OF))
                         && currentTriplet.object.endsWith(constants.getObjectDefinition(PDDLConstants.objectType.ACTION))) {
@@ -642,7 +667,7 @@ public class PDDLGenerator {
                            break;
                        case ACTION:
                            if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PREDICATE_SET))){
-                               assets.actions.elementAt(stype.vectorPosition).predicateSet = new PDDLPredicateSet(currentTriplet.object);
+                               assets.actions.elementAt(stype.vectorPosition).predicateSet = new PDDLSet(currentTriplet.object);
                                break;
                            }
                            else if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PREDICATE_SET_OPERATOR))){
@@ -651,7 +676,7 @@ public class PDDLGenerator {
                            }
                        case PRECONDITION:
                            if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PREDICATE_SET))){
-                               assets.preconditions.elementAt(stype.vectorPosition).predicateSet = new PDDLPredicateSet(currentTriplet.object);
+                               assets.preconditions.elementAt(stype.vectorPosition).predicateSet = new PDDLSet(currentTriplet.object);
                                break;
                            }
                            else if (currentTriplet.predicate.endsWith(constants.getPredicateDefinition(PDDLConstants.predicateType.HAS_PREDICATE_SET_OPERATOR))){
@@ -821,19 +846,70 @@ public class PDDLGenerator {
                 for (int i = 0; i < assets.predicateSets.size(); i++){
                     if (assets.predicateSets.elementAt(i).name.compareTo(currentTriplet.subject) == 0){
                         found = true;
-                        assets.predicateSets.elementAt(i).predicates.add(new PDDLPredicate(currentTriplet.object));
+                        String type = "";
+                        if (currentTriplet.subject.contains("_")) {
+                            type = currentTriplet.subject.substring(
+                                    currentTriplet.subject.indexOf("#") + 1,
+                                    currentTriplet.subject.indexOf("_")
+                            );
+                        }
+                        assets.predicateSets.elementAt(i).objects.add(new PDDLObject(currentTriplet.object, type));
                     }
                 }
                 if (!found){
-                    assets.predicateSets.add(new PDDLPredicateSet(currentTriplet.subject));
-                    assets.predicateSets.lastElement().predicates.add(new PDDLPredicate(currentTriplet.object));
+                    assets.predicateSets.add(new PDDLSet(currentTriplet.subject));
+                    String type = "";
+                    if (currentTriplet.subject.contains("_")) {
+                        type = currentTriplet.subject.substring(
+                                currentTriplet.subject.indexOf("#") + 1,
+                                currentTriplet.subject.indexOf("_")
+                        );
+                    }
+                    assets.predicateSets.lastElement().objects.add(new PDDLObject(currentTriplet.object, type));
                 }
             }
         }
 
         // Second parse, connect predicate sets to from actions to named individuals
+        //System.out.println("Objects size "+assets.objects.size());
+        //System.out.println("PDDL sets size "+assets.predicateSets.size());
 
-        return assets;
+
+        // Add objects to PDDL sets
+        for (int predicateSetIterator = 0; predicateSetIterator < assets.predicateSets.size(); predicateSetIterator++){
+            for (int objectIterator = 0; objectIterator < assets.objects.size(); objectIterator++){
+                int prindex = predicateSetContainsObject(
+                        assets.predicateSets.elementAt(predicateSetIterator),
+                        assets.objects.elementAt(objectIterator).name);
+                //System.out.println("Comparing "+assets.predicateSets.elementAt(predicateSetIterator)+" with "+assets.objects.elementAt(objectIterator).name);
+                if (prindex > 0){
+                    assets.predicateSets.elementAt(predicateSetIterator).objects.set(prindex, assets.objects.elementAt(objectIterator));
+                }
+            }
+
+        }
+
+        // Add PDDL sets to actions
+        for (int actionIterator = 0; actionIterator < assets.actions.size(); actionIterator++){
+            PDDLAction currentAction = assets.actions.elementAt(actionIterator);
+            for (int predicateSetIterator = 0; predicateSetIterator < assets.predicateSets.size(); predicateSetIterator++){
+                if (currentAction.predicateSetName.compareTo(assets.predicateSets.elementAt(predicateSetIterator).name) == 0){
+                    assets.actions.elementAt(actionIterator).predicateSet = assets.predicateSets.elementAt(predicateSetIterator);
+                }
+            }
+        }
+
+        return assets; // the actions in here should contain all info
+    }
+
+    private int predicateSetContainsObject(PDDLSet predicateSet, String objectName){
+        //System.out.println("Object size "+predicateSet.objects.size());
+        for (int i = 0; i< predicateSet.objects.size(); i++){
+            //System.out.println("Comparing "+predicateSet.objects.elementAt(i).name+ " with "+objectName);
+            if (predicateSet.objects.elementAt(i).name.compareTo(objectName) == 0)
+                return i;
+        }
+        return -1;
     }
 }
 
