@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://ontologies.cf.ericsson.net/BusTransitions" uri="BusTransitions.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1477383864871" name="http://ontologies.cf.ericsson.net/ITS" uri="ITS.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1477383864871" name="http://ontologies.cf.ericsson.net/Middle" uri="Middle.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1477383864871" name="http://ontologies.cf.ericsson.net/System" uri="System.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1477383864871" name="http://purl.oclc.org/NET/ssnx/ssn" uri="ext/ssn.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1477383864871" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="ext/DUL.xml"/>
+    </group>
+</catalog>

@@ -12,10 +12,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix Middle: <http://ontologies.cf.ericsson.net/Middle#> .
-@prefix busModel: <http://ontologies.cf.ericsson.net/busModel#> .
+@prefix busModel: <http://ontologies.cf.ericsson.net/BusTransitions#> .
 
 <http://ontologies.cf.ericsson.net/busPlStatesFile> a owl:Ontology ;
-	owl:imports <http://ontologies.cf.ericsson.net/busModel> ;
+	owl:imports <http://ontologies.cf.ericsson.net/BusTransitions> ;
 	rdfs:comment "States file for the bus transporation planning example" .
 # 
 # 

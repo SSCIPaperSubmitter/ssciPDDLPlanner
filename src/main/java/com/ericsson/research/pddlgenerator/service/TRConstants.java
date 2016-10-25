@@ -14,6 +14,7 @@ public class TRConstants {
     public static String hasEffectRel = "hasEffectProperty";
     public static String hasConditionRel = "hasConditionProperty";
     public static String isSubclassOf = "subClassOf";
+    public static String hasMetric = "hasMetric";
 
     public static String PREDICATETYPES = "PredicateTypes";
     public static String FUNCTIONS = "Functions";

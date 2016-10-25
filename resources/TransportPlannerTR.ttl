@@ -194,6 +194,12 @@
 	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasName> "language"^^xsd:string ;
 	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> "PDDL"^^xsd:string .
 # 
+# http://ontologies.cf.ericsson.net/TransportPlannerTR#hasMetric
+
+<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasMetric> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.ericsson.net/TransportPlannerTR#TransformationRules> ;
+	<http://ontologies.cf.ericsson.net/TransportPlannerTR#hasValue> "(:metric minimize (total-cost))" .
+# 
 # http://ontologies.cf.ericsson.net/TransportPlannerTR#hasRequirements
 
 <http://ontologies.cf.ericsson.net/TransportPlannerTR#hasRequirements> a owl:Class ;

@@ -12,6 +12,7 @@ import java.util.Vector;
  */
 public class PDDLGenerator {
 
+    private String problemFileMetric = "";
 
     public String[] GeneratePlan(String statesFile, String transitionsFile, String transformationRulesFile, boolean writeToFile){
 
@@ -81,15 +82,29 @@ public class PDDLGenerator {
 
                 // ------------------------------------------ States File ------------------------------------------
 
-                array[1] = "";
+               // for (int i = 0; i< stateData.actions.elementAt(1).predicateSet.objects.size(); i++)
+                 //   System.out.println(i+" "+stateData.actions.elementAt(1).predicateSet.objects.elementAt(i).type);
+
+
+                array[1] = domain.substring(0, domain.indexOf(")")) + "-01)\n";
+                array[1] += "\t(:domain " + domain.substring(domain.indexOf("domain") + 7, domain.indexOf(")"))+")\n";
                 for (int i = 0; i < stateData.actions.size(); i++){
                     PDDLAction currentAction = stateData.actions.elementAt(i);
                     array[1] += "\t(:"+PDDLConstants.removePrefixes(stateData.actions.elementAt(i).name)+"\n";
                     for (int k = 0; k < currentAction.predicateSet.objects.size(); k++){
                         boolean hasValue = false;
                         String value = "";
-                        if (currentAction.predicateSet.objects.elementAt(k).value.isEmpty())
-                            array[1] += "\t\t("+currentAction.predicateSet.objects.elementAt(k).type;
+                        String aname = PDDLConstants.removePrefixes(currentAction.name);
+                        if (currentAction.predicateSet.objects.elementAt(k).value.isEmpty()) {
+                            //System.out.println(currentAction.predicateSet.objects.elementAt(k).type+" "+currentAction.name);
+                            if (currentAction.predicateSet.objects.elementAt(k).type.compareTo(aname) == 0){
+                                currentAction.predicateSet.objects.elementAt(k).type =
+                                        PDDLConstants.removePrefixes(currentAction.predicateSet.objects.elementAt(k).name);
+                                currentAction.predicateSet.objects.elementAt(k).type = currentAction.predicateSet.objects.elementAt(k).type.replace("_", " ");
+                            }
+
+                            array[1] += "\t\t(" + currentAction.predicateSet.objects.elementAt(k).type;
+                        }
                         else {
                             if (currentAction.predicateSet.objects.elementAt(k).value.contains("^")){
                                 value = currentAction.predicateSet.objects.elementAt(k).value.substring(
@@ -108,9 +123,12 @@ public class PDDLGenerator {
                         else
                             array[1] += ") "+value+")\n";
                     }
+                    array[1] += "\t)\n";
                 }
+                array[1] += "\t"+problemFileMetric+"\n";
+                array[1] += ")\n";
 
-                System.out.println(array[1]);
+                //System.out.println(array[1]);
             }
             else {
                 // placeholder for more languages
@@ -505,7 +523,7 @@ public class PDDLGenerator {
             Resource p = stmt.getPredicate();
             RDFNode o = stmt.getObject();
 
-           //System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
+           System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
             rawData.add(new PDDLRaw(s.toString(), p.toString(), o.toString()));
         }
 
@@ -516,13 +534,16 @@ public class PDDLGenerator {
             PDDLRaw currentDatum = rawDataIterator.next();
             if (currentDatum.predicate.endsWith(TRConstants.hasNameRel))
                 safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, false, false);
-            else if (currentDatum.predicate.endsWith(TRConstants.hasValueRel))
+            else if (currentDatum.predicate.endsWith(TRConstants.hasValueRel) && !currentDatum.subject.endsWith(TRConstants.hasMetric))
                 safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, false, false, false);
             else if (currentDatum.predicate.endsWith(TRConstants.isSubclassOf)){
                 if (currentDatum.object.endsWith(TRConstants.PREDICATETYPES))
                     safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, true, false);
                 else if (currentDatum.object.endsWith(TRConstants.FUNCTIONS))
                     safeInsertTransformationRuleData(currentDatum.subject, currentDatum.object, trassets, true, true, true);
+            }
+            else if (currentDatum.subject.endsWith(TRConstants.hasMetric) && currentDatum.predicate.endsWith(TRConstants.hasValueRel)){
+                problemFileMetric = currentDatum.object;
             }
         }
 
@@ -552,7 +573,9 @@ public class PDDLGenerator {
 
 
     private void safeInsertTransformationRuleData(String subject, String data, Vector<TRassets> trRules,
-                                                  boolean nameData, boolean isPredicateType, boolean isFunctionType){
+                                                  boolean nameData,
+                                                  boolean isPredicateType,
+                                                  boolean isFunctionType){
         // Safe insert of Transformation Rules (avoids duplicate entries)
         if (!isPredicateType && !isFunctionType) {
             for (int i = 0; i < trRules.size(); i++) {
