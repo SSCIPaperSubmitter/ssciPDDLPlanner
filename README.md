@@ -27,7 +27,7 @@ To test the generator with the sample model files, you can use the curl command-
 
 #### 2.3 API
 
-The software has an API which it uses to load the models and generate the PDDL files. The API is simple, and consists of a single multipart HTTP POST request. Therefore, the content type must be multipart/form-data. The service point is submitInput, prefixed by the URL of the hosting server, for example localhost:8080/submitInput. The names to be used are transitionsFile for the transition file model, statesFile for the states file model and TRFile for the transformation rules model.  
+The software has an API which it uses to load the models and generate the PDDL files. The API is simple, and consists of a single multipart HTTP POST request. Therefore, the content type must be multipart/form-data. The service point is submitInput, prefixed by the URL of the hosting server, for example localhost:8080/submitInput. The names to be used are transitionsFile for the transition file model, statesFile for the states file model and TRFile for the transformation rules model. The reply is a JSON file with two entries, one for the problem file (key problemFile) and one for the domain file (key domainFile).  
 
 #### 2.4 Editing the models
 
