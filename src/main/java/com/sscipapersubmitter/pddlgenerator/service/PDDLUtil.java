@@ -1,4 +1,4 @@
-package com.ericsson.research.pddlgenerator.service;
+package com.sscipapersubmitter.pddlgenerator.service;
 
 import java.util.Iterator;
 import java.util.Vector;

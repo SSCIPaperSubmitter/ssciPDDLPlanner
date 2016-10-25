@@ -1,4 +1,4 @@
-package com.ericsson.research.pddlgenerator.representations;
+package com.sscipapersubmitter.pddlgenerator.representations;
 
 /**
  * Created by eathkar on 2016-10-14.

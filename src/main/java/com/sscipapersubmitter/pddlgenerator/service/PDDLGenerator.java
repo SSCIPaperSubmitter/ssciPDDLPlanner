@@ -1,4 +1,4 @@
-package com.ericsson.research.pddlgenerator.service;
+package com.sscipapersubmitter.pddlgenerator.service;
 
 import org.apache.jena.rdf.model.*;
 
@@ -523,7 +523,7 @@ public class PDDLGenerator {
             Resource p = stmt.getPredicate();
             RDFNode o = stmt.getObject();
 
-           System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
+           //System.out.println("Adding "+s.toString()+ " "+p.toString()+" "+o.toString());
             rawData.add(new PDDLRaw(s.toString(), p.toString(), o.toString()));
         }
 

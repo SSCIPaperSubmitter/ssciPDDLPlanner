@@ -1,4 +1,4 @@
-package com.ericsson.research.pddlgenerator.service;
+package com.sscipapersubmitter.pddlgenerator.service;
 
 /**
  * Created by eathkar on 2016-10-14.

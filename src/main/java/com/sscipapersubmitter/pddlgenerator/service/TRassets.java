@@ -1,4 +1,4 @@
-package com.ericsson.research.pddlgenerator.service;
+package com.sscipapersubmitter.pddlgenerator.service;
 
 import org.springframework.web.servlet.view.velocity.VelocityView;
 

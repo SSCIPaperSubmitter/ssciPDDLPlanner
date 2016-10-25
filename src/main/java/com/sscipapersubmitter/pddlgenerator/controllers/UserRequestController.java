@@ -1,14 +1,12 @@
-package com.ericsson.research.pddlgenerator.controllers;
+package com.sscipapersubmitter.pddlgenerator.controllers;
 
-import com.ericsson.research.pddlgenerator.representations.FileInput;
-import com.ericsson.research.pddlgenerator.representations.GeneratedFiles;
-import com.ericsson.research.pddlgenerator.service.PDDLGenerator;
+import com.sscipapersubmitter.pddlgenerator.representations.FileInput;
+import com.sscipapersubmitter.pddlgenerator.representations.GeneratedFiles;
+import com.sscipapersubmitter.pddlgenerator.service.PDDLGenerator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

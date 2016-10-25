@@ -1,4 +1,4 @@
-package com.ericsson.research.pddlgenerator.representations;
+package com.sscipapersubmitter.pddlgenerator.representations;
 
 import java.io.File;
 
