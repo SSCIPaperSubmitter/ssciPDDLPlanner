@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://ontologies.cf.ericsson.net/ITS#"
-     xml:base="http://ontologies.cf.ericsson.net/ITS"
+<rdf:RDF xmlns="http://ontologies.cf.sscipaper.net/ITS#"
+     xml:base="http://ontologies.cf.sscipaper.net/ITS"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -16,8 +16,8 @@
      xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://ontologies.cf.ericsson.net/ITS">
-        <owl:imports rdf:resource="http://ontologies.cf.ericsson.net/Middle"/>
+    <owl:Ontology rdf:about="http://ontologies.cf.sscipaper.net/ITS">
+        <owl:imports rdf:resource="http://ontologies.cf.sscipaper.net/Middle"/>
         <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <rdfs:comment>Intelligent transport systems ontology.</rdfs:comment>
     </owl:Ontology>
@@ -35,103 +35,103 @@
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#controls -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#controls -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#controls">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Operational_Safety"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Dynamics"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#controls">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Operational_Safety"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Dynamics"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasDestination -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasDestination -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasDestination"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasDestination"/>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasDevice -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasDevice -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasDevice">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transport_Agent"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Device"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasDevice">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transport_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Device"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasEquippment -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasEquippment -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasEquippment">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Device"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasEquippment">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Device"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasExpenses -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasExpenses -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasExpenses">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Cost"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasExpenses">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Cost"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasOrigin -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasOrigin -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasOrigin"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasOrigin"/>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasTechnology -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasTechnology -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasTechnology">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportable_Entity"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Device"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasTechnology">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportable_Entity"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Device"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasTransportAgent -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasTransportAgent -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasTransportAgent">
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transport_Agent"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasTransportAgent">
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transport_Agent"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasTransportAgentCapacity -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasTransportAgentCapacity -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasTransportAgentCapacity">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transport_Agent"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Capacity"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasTransportAgentCapacity">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transport_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Capacity"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasTransportAgentDynamics -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasTransportAgentDynamics -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasTransportAgentDynamics">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transport_Agent"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Dynamics"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasTransportAgentDynamics">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transport_Agent"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Dynamics"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasTransportInfrastructure -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasTransportInfrastructure -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasTransportInfrastructure">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasTransportInfrastructure">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#influences -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#influences -->
 
-    <owl:ObjectProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#influences">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Operational_Safety"/>
-        <rdfs:range rdf:resource="http://ontologies.cf.ericsson.net/Middle#Capacity"/>
+    <owl:ObjectProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#influences">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Operational_Safety"/>
+        <rdfs:range rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Capacity"/>
     </owl:ObjectProperty>
     
 
@@ -147,163 +147,163 @@
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#CoordinatesConnected -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#CoordinatesConnected -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#CoordinatesConnected">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#TransportAgentMoved"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#CoordinatesConnected">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#TransportAgentMoved"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#SafetyParameterName -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#SafetyParameterName -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#SafetyParameterName">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Safety_Parameter"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#SafetyParameterName">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Safety_Parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#SafetyParameterValue -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#SafetyParameterValue -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#SafetyParameterValue">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Safety_Parameter"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#SafetyParameterValue">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Safety_Parameter"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#TransportAgentAtEnd -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#TransportAgentAtEnd -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#TransportAgentAtEnd">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#TransportAgentMovedEffect"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#TransportAgentAtEnd">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#TransportAgentMovedEffect"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#TransportAgentAtStart -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#TransportAgentAtStart -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#TransportAgentAtStart">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#TransportAgentMoved"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#TransportAgentAtStart">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#TransportAgentMoved"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#TransportAgentMoved -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#TransportAgentMoved -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#TransportAgentMoved">
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#TransportAgentMoved">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#TransportAgentMovedEffect -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#TransportAgentMovedEffect -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#TransportAgentMovedEffect">
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#TransportAgentMovedEffect">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#TransportAgentNotStart -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#TransportAgentNotStart -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#TransportAgentNotStart">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#TransportAgentMovedEffect"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#TransportAgentNotStart">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#TransportAgentMovedEffect"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#direction -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#direction -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#direction">
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#direction">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Direction of movement of the agent.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#double -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#double -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#double">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#SafetyParameterValue"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#double">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#SafetyParameterValue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasDurationInSeconds -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasDurationInSeconds -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasDurationInSeconds">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/Middle#Action"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasDurationInSeconds">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Action"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasProceduralKnowledgeFile -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasProceduralKnowledgeFile -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasProceduralKnowledgeFile">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/System#Procedural_Knowledge"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasProceduralKnowledgeFile">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/System#Procedural_Knowledge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>placeholder for procedural knowledge, such as PDDL domain file, problem file</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasProceduralKnowledgeFileType -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasProceduralKnowledgeFileType -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasProceduralKnowledgeFileType">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#hasProceduralKnowledgeFile"/>
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/System#Procedural_Knowledge"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasProceduralKnowledgeFileType">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#hasProceduralKnowledgeFile"/>
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/System#Procedural_Knowledge"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#hasSegmentLength -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#hasSegmentLength -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#hasSegmentLength">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Track"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#hasSegmentLength">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Track"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#int -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#int -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#int">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#SafetyParameterValue"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#int">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#SafetyParameterValue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#speed -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#speed -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#speed">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transport_Agent"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#speed">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transport_Agent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#status -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#status -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#status">
-        <rdfs:domain rdf:resource="http://ontologies.cf.ericsson.net/ITS#TrafficSemaphore"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#status">
+        <rdfs:domain rdf:resource="http://ontologies.cf.sscipaper.net/ITS#TrafficSemaphore"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Status of the semaphore.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#string -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#string -->
 
-    <owl:DatatypeProperty rdf:about="http://ontologies.cf.ericsson.net/ITS#string">
-        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#SafetyParameterValue"/>
+    <owl:DatatypeProperty rdf:about="http://ontologies.cf.sscipaper.net/ITS#string">
+        <rdfs:subPropertyOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#SafetyParameterValue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -320,165 +320,165 @@
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Air -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Air -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Air">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Air">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Cargo -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Cargo -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Cargo">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportable_Entity"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Cargo">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportable_Entity"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Destination -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Destination -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Destination">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/System#Abstract"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Destination">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/System#Abstract"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Distance -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Distance -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Distance">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/Middle#Cost"/>
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/Middle#Space"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Distance">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Cost"/>
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Space"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Operational_Safety -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Operational_Safety -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Operational_Safety"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Operational_Safety"/>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Pipeline -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Pipeline -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Pipeline">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Pipeline">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Rail -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Rail -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Rail">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Rail">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Road -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Road -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Road">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Road">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Route -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Route -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Route">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Route">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Safety_Category -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Safety_Category -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Safety_Category">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Operational_Safety"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Safety_Category">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Operational_Safety"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Safety_Parameter -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Safety_Parameter -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Safety_Parameter">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Safety_Category"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Safety_Parameter">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Safety_Category"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Telco -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Telco -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Telco">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Telco">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Track -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Track -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Track">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Track">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure"/>
         <rdfs:comment>A track is part of a route.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#TrafficSemaphore -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#TrafficSemaphore -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#TrafficSemaphore">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/Middle#Actuator"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#TrafficSemaphore">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/Middle#Actuator"/>
         <rdfs:comment>A generic traffic regulator</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Transport_Agent -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Transport_Agent -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Transport_Agent">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/System#Agent"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Transport_Agent">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/System#Agent"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Transportable_Entity -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Transportable_Entity -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Transportable_Entity"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Transportable_Entity"/>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure"/>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Transportation_Mode -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Transportation_Network -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Transportation_Network -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Transportation_Network">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Infrastructure"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Transportation_Network">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Infrastructure"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/ITS#Water -->
+    <!-- http://ontologies.cf.sscipaper.net/ITS#Water -->
 
-    <owl:Class rdf:about="http://ontologies.cf.ericsson.net/ITS#Water">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportation_Mode"/>
+    <owl:Class rdf:about="http://ontologies.cf.sscipaper.net/ITS#Water">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportation_Mode"/>
     </owl:Class>
     
 
 
-    <!-- http://ontologies.cf.ericsson.net/Middle#Data -->
+    <!-- http://ontologies.cf.sscipaper.net/Middle#Data -->
 
-    <rdf:Description rdf:about="http://ontologies.cf.ericsson.net/Middle#Data">
-        <rdfs:subClassOf rdf:resource="http://ontologies.cf.ericsson.net/ITS#Transportable_Entity"/>
+    <rdf:Description rdf:about="http://ontologies.cf.sscipaper.net/Middle#Data">
+        <rdfs:subClassOf rdf:resource="http://ontologies.cf.sscipaper.net/ITS#Transportable_Entity"/>
     </rdf:Description>
 </rdf:RDF>
 

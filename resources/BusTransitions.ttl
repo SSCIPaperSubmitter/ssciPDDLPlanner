@@ -1,7 +1,7 @@
-@prefix : <http://ontologies.cf.ericsson.net/busTransitions#> .
+@prefix : <http://ontologies.cf.sscipaper.net/busTransitions#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ns: <http://creativecommons.org/ns#> .
-@prefix ITS: <http://ontologies.cf.ericsson.net/ITS#> .
+@prefix ITS: <http://ontologies.cf.sscipaper.net/ITS#> .
 @prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -11,11 +11,11 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@prefix busModel: <http://ontologies.cf.ericsson.net/busModel#> .
+@prefix busModel: <http://ontologies.cf.sscipaper.net/busModel#> .
 
-<http://ontologies.cf.ericsson.net/busTransitions> a owl:Ontology ;
-	owl:imports <http://ontologies.cf.ericsson.net/ITS> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasComputation> "Transitions file for the Bus Transport Planning problem domain. This is a generic file, which does not include any AI Planning-Language specific configuration. These have to be supplied in the Transformation Rules File." .
+<http://ontologies.cf.sscipaper.net/busTransitions> a owl:Ontology ;
+	owl:imports <http://ontologies.cf.sscipaper.net/ITS> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasComputation> "Transitions file for the Bus Transport Planning problem domain. This is a generic file, which does not include any AI Planning-Language specific configuration. These have to be supplied in the Transformation Rules File." .
 # 
 # 
 # #################################################################
@@ -25,511 +25,511 @@
 # #################################################################
 # 
 # 
-# http://ontologies.cf.ericsson.net/Decrease
+# http://ontologies.cf.sscipaper.net/Decrease
 
-<http://ontologies.cf.ericsson.net/Decrease> a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Computation> .
+<http://ontologies.cf.sscipaper.net/Decrease> a owl:Class ;
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Computation> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#Decrease
+# http://ontologies.cf.sscipaper.net/busTransitions#Decrease
 
 :Decrease a owl:Class .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#Greater
+# http://ontologies.cf.sscipaper.net/busTransitions#Greater
 
 :Greater a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Computation> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Computation> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#Increase
+# http://ontologies.cf.sscipaper.net/busTransitions#Increase
 
 :Increase a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Computation> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Computation> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#Road
+# http://ontologies.cf.sscipaper.net/busTransitions#Road
 
 :Road a owl:Class ;
 	rdfs:subClassOf ITS:Route .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#Road_Network
+# http://ontologies.cf.sscipaper.net/busTransitions#Road_Network
 
 :Road_Network a owl:Class ;
 	rdfs:subClassOf ITS:Transportation_Network .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#azdistance
+# http://ontologies.cf.sscipaper.net/busTransitions#azdistance
 
 :azdistance a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#azduration
+# http://ontologies.cf.sscipaper.net/busTransitions#azduration
 
 :azduration a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busatcoordinate-add-move-to-next-poi
+# http://ontologies.cf.sscipaper.net/busTransitions#busatcoordinate-add-move-to-next-poi
 
 :busatcoordinate-add-move-to-next-poi a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Add> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_1"^^xsd:string , "s0_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateTiming> "at end" ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_1" , "coordinate_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Add> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_1"^^xsd:string , "s0_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateTiming> "at end" ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_1" , "coordinate_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busatcoordinate-remove-move-to-next-poi
+# http://ontologies.cf.sscipaper.net/busTransitions#busatcoordinate-remove-move-to-next-poi
 
 :busatcoordinate-remove-move-to-next-poi a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_1"^^xsd:string , "s0_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" , "coordinate_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Remove> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_1"^^xsd:string , "s0_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "remove" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" , "coordinate_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busseatingcapacity
+# http://ontologies.cf.sscipaper.net/busTransitions#busseatingcapacity
 
 :busseatingcapacity a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busseatingcapacity-add-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#busseatingcapacity-add-drop-passenger
 
 :busseatingcapacity-add-drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Add> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "increase" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isFunction> "true"^^xsd:boolean ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Add> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "increase" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isFunction> "true"^^xsd:boolean ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busseatingcapacity-decrease
+# http://ontologies.cf.sscipaper.net/busTransitions#busseatingcapacity-decrease
 
 :busseatingcapacity-decrease a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busseatingcapacity-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#busseatingcapacity-drop-passenger
 
 :busseatingcapacity-drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Computation> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Computation> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busseatingcapacity-increase
+# http://ontologies.cf.sscipaper.net/busTransitions#busseatingcapacity-increase
 
 :busseatingcapacity-increase a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busseatingcapacity-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#busseatingcapacity-pickup-passenger
 
 :busseatingcapacity-pickup-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Computation> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Computation> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#busseatingcapacity-remove-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#busseatingcapacity-remove-pickup-passenger
 
 :busseatingcapacity-remove-pickup-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "decrease" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Remove> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "decrease" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#computation-list-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#computation-list-drop-passenger
 
 :computation-list-drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#FunctionList> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#FunctionList> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#computation-list-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#computation-list-pickup-passenger
 
 :computation-list-pickup-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#FunctionList> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#FunctionList> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#connected
+# http://ontologies.cf.sscipaper.net/busTransitions#connected
 
 :connected a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "connected"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "connected"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#decrease-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#decrease-pickup-passenger
 
 :decrease-pickup-passenger a owl:Class ;
 	rdfs:subClassOf :Decrease .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger
 
 :drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Transition> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasAction> :drop-passenger-action ;
-	<http://ontologies.cf.ericsson.net/Middle#hasComputation> :computation-list-drop-passenger ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPrecondition> :drop-passenger-precondition .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Transition> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasAction> :drop-passenger-action ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasComputation> :computation-list-drop-passenger ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPrecondition> :drop-passenger-precondition .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-action
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-action
 
 :drop-passenger-action a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Action> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSet> :drop-passenger-action-predicate-set ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Action> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSet> :drop-passenger-action-predicate-set ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-action-predicate-set
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-action-predicate-set
 
 :drop-passenger-action-predicate-set a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#PredicateSet> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicate> :busseatingcapacity-add-drop-passenger , :drop-passenger-total-cost , :passengerdropcoordinate-remove-drop-passenger , :passengerinbus-remove-drop-passenger , :passengerserviced-add-drop-passenger .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#PredicateSet> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicate> :busseatingcapacity-add-drop-passenger , :drop-passenger-total-cost , :passengerdropcoordinate-remove-drop-passenger , :passengerinbus-remove-drop-passenger , :passengerserviced-add-drop-passenger .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-busseatingcapacity-increase
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-busseatingcapacity-increase
 
 :drop-passenger-busseatingcapacity-increase a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-passengerdropcoordinate
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-passengerdropcoordinate
 
 :drop-passenger-passengerdropcoordinate a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_1" , "s0_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_1" , "s0_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-passengerdropcoordinate-negation
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-passengerdropcoordinate-negation
 
 :drop-passenger-passengerdropcoordinate-negation a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-passengerinbus-negation
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-passengerinbus-negation
 
 :drop-passenger-passengerinbus-negation a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_0" , "p2_1" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" , "passenger_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_0" , "p2_1" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "remove" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" , "passenger_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-passengerserviced
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-passengerserviced
 
 :drop-passenger-passengerserviced a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerserviced"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerserviced"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-precondition
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-precondition
 
 :drop-passenger-precondition a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Precondition> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSet> :drop-passenger-precondition-predicate-set ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Precondition> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSet> :drop-passenger-precondition-predicate-set ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-precondition-predicate-set
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-precondition-predicate-set
 
 :drop-passenger-precondition-predicate-set a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#PredicateSet> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicate> :drop-passenger-passengerdropcoordinate , :move-to-next-coordinate-busatcoordinate , :pickup-passenger-isbusstop , :pickup-passenger-passengerinbus .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#PredicateSet> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicate> :drop-passenger-passengerdropcoordinate , :move-to-next-coordinate-busatcoordinate , :pickup-passenger-isbusstop , :pickup-passenger-passengerinbus .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#drop-passenger-total-cost
+# http://ontologies.cf.sscipaper.net/busTransitions#drop-passenger-total-cost
 
 :drop-passenger-total-cost a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "decrease" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "total-cost"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "decrease" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "total-cost"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#greater-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#greater-pickup-passenger
 
 :greater-pickup-passenger a owl:Class ;
 	rdfs:subClassOf :Greater .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#increase-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#increase-drop-passenger
 
 :increase-drop-passenger a owl:Class ;
 	rdfs:subClassOf :Increase .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#isbusstop
+# http://ontologies.cf.sscipaper.net/busTransitions#isbusstop
 
 :isbusstop a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "isbusstop"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "isbusstop"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-coordinate-busatcoordinate
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-coordinate-busatcoordinate
 
 :move-to-next-coordinate-busatcoordinate a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_1"^^xsd:string , "s0_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" , "coordinate_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_1"^^xsd:string , "s0_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" , "coordinate_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-coordinate-busatcoordinate-end
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-coordinate-busatcoordinate-end
 
 :move-to-next-coordinate-busatcoordinate-end a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-coordinate-busatcoordinate-negation
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-coordinate-busatcoordinate-negation
 
 :move-to-next-coordinate-busatcoordinate-negation a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_1" , "s0_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" , "coordinate_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_1" , "s0_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "remove" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busatcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" , "coordinate_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-coordinate-connected
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-coordinate-connected
 
 :move-to-next-coordinate-connected a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "e1_1"^^xsd:string , "s0_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "connected"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "coordinate_0" , "coordinate_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "e1_1"^^xsd:string , "s0_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "connected"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "coordinate_0" , "coordinate_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-coordinate-total-cost-increase-distance
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-coordinate-total-cost-increase-distance
 
 :move-to-next-coordinate-total-cost-increase-distance a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "increase" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperatorAmount> "azdistance ?s0 ?e1" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "total-cost" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateTiming> "at end" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "increase" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperatorAmount> "azdistance ?s0 ?e1" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "total-cost" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateTiming> "at end" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-poi
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-poi
 
 :move-to-next-poi a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Transition> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasAction> :move-to-next-poi-action ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPrecondition> :move-to-next-poi-precondition .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Transition> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasAction> :move-to-next-poi-action ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPrecondition> :move-to-next-poi-precondition .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-poi-action
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-poi-action
 
 :move-to-next-poi-action a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Action> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSet> :move-to-next-poi-action-predicate-set ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Action> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSet> :move-to-next-poi-action-predicate-set ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-poi-action-predicate-set
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-poi-action-predicate-set
 
 :move-to-next-poi-action-predicate-set a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#PredicateSet> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicate> :busatcoordinate-add-move-to-next-poi , :busatcoordinate-remove-move-to-next-poi , :move-to-next-coordinate-total-cost-increase-distance .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#PredicateSet> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicate> :busatcoordinate-add-move-to-next-poi , :busatcoordinate-remove-move-to-next-poi , :move-to-next-coordinate-total-cost-increase-distance .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-poi-precondition
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-poi-precondition
 
 :move-to-next-poi-precondition a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Precondition> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSet> :move-to-next-poi-precondition-predicate-set ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Precondition> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSet> :move-to-next-poi-precondition-predicate-set ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#move-to-next-poi-precondition-predicate-set
+# http://ontologies.cf.sscipaper.net/busTransitions#move-to-next-poi-precondition-predicate-set
 
 :move-to-next-poi-precondition-predicate-set a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#PredicateSet> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicate> :move-to-next-coordinate-busatcoordinate , :move-to-next-coordinate-connected .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#PredicateSet> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicate> :move-to-next-coordinate-busatcoordinate , :move-to-next-coordinate-connected .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#noofpassengersinbus
+# http://ontologies.cf.sscipaper.net/busTransitions#noofpassengersinbus
 
 :noofpassengersinbus a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerdropcoordinate
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerdropcoordinate
 
 :passengerdropcoordinate a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerdropcoordinate-remove-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerdropcoordinate-remove-drop-passenger
 
 :passengerdropcoordinate-remove-drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_1" , "s0_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Remove> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_1" , "s0_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "remove" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerdropcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerinbus
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerinbus
 
 :passengerinbus a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerinbus-add-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerinbus-add-pickup-passenger
 
 :passengerinbus-add-pickup-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Add> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_0" , "p2_1" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "add" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" , "passenger_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Add> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_0" , "p2_1" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "add" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" , "passenger_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerinbus-remove-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerinbus-remove-drop-passenger
 
 :passengerinbus-remove-drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_0" , "p2_1" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" , "passenger_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Remove> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_0" , "p2_1" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "remove" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" , "passenger_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerneedsservice
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerneedsservice
 
 :passengerneedsservice a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerneedsservice-remove-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerneedsservice-remove-pickup-passenger
 
 :passengerneedsservice-remove-pickup-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Remove> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "remove" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerpickcoordinate
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerpickcoordinate
 
 :passengerpickcoordinate a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerpickcoordinate-remove-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerpickcoordinate-remove-drop-passenger
 
 :passengerpickcoordinate-remove-drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Remove> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerpickupcoordinate-remove-pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerpickupcoordinate-remove-pickup-passenger
 
 :passengerpickupcoordinate-remove-pickup-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Remove> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_1" , "s0_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "remove" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Remove> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_1" , "s0_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "remove" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerpickupwait
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerpickupwait
 
 :passengerpickupwait a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerserviced
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerserviced
 
 :passengerserviced a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerserviced"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerserviced"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#passengerserviced-add-drop-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#passengerserviced-add-drop-passenger
 
 :passengerserviced-add-drop-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Add> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_0" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerserviced"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Add> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_0" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerserviced"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger
 
 :pickup-passenger a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Transition> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasAction> :pickup-passenger-action ;
-	<http://ontologies.cf.ericsson.net/Middle#hasComputation> :computation-list-pickup-passenger ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPrecondition> :pickup-passenger-precondition .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Transition> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasAction> :pickup-passenger-action ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasComputation> :computation-list-pickup-passenger ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPrecondition> :pickup-passenger-precondition .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-action
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-action
 
 :pickup-passenger-action a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Action> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSet> :pickup-passenger-action-predicate-set ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Action> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSet> :pickup-passenger-action-predicate-set ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-action-predicate-set
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-action-predicate-set
 
 :pickup-passenger-action-predicate-set a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#PredicateSet> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicate> :busseatingcapacity-remove-pickup-passenger , :passengerinbus-add-pickup-passenger , :passengerneedsservice-remove-pickup-passenger , :passengerpickupcoordinate-remove-pickup-passenger , :pickup-passenger-totalcost .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#PredicateSet> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicate> :busseatingcapacity-remove-pickup-passenger , :passengerinbus-add-pickup-passenger , :passengerneedsservice-remove-pickup-passenger , :passengerpickupcoordinate-remove-pickup-passenger , :pickup-passenger-totalcost .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-busseatingcapacity
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-busseatingcapacity
 
 :pickup-passenger-busseatingcapacity a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> ">="^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isFunction> "true"^^xsd:boolean ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> ">="^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isFunction> "true"^^xsd:boolean ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-busseatingcapacity-decrease
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-busseatingcapacity-decrease
 
 :pickup-passenger-busseatingcapacity-decrease a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isFunction> "true"^^xsd:boolean .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "busseatingcapacity"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isFunction> "true"^^xsd:boolean .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-isbusstop
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-isbusstop
 
 :pickup-passenger-isbusstop a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "s0_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "isbusstop"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "coordinate_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "s0_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "isbusstop"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "coordinate_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-passengerinbus
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-passengerinbus
 
 :pickup-passenger-passengerinbus a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "b1_0" , "p2_1" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "bus_0" , "passenger_1" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "b1_0" , "p2_1" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerinbus"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "bus_0" , "passenger_1" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-passengerneedsservice
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-passengerneedsservice
 
 :pickup-passenger-passengerneedsservice a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-passengerneedsservice-negation
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-passengerneedsservice-negation
 
 :pickup-passenger-passengerneedsservice-negation a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerneedsservice"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-passengerpickcoordinate
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-passengerpickcoordinate
 
 :pickup-passenger-passengerpickcoordinate a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasParameter> "p2_1"^^xsd:string , "s0_0"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string ;
-	<http://ontologies.cf.ericsson.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasParameter> "p2_1"^^xsd:string , "s0_0"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string ;
+	<http://ontologies.cf.sscipaper.net/Middle#isOfType> "coordinate_1" , "passenger_0" .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-passengerpickcoordinate-negation
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-passengerpickcoordinate-negation
 
 :pickup-passenger-passengerpickcoordinate-negation a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "passengerpickcoordinate"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-precondition
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-precondition
 
 :pickup-passenger-precondition a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Precondition> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSet> :pickup-passenger-precondition-predicate-set ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Precondition> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSet> :pickup-passenger-precondition-predicate-set ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateSetOperator> "AND"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-precondition-predicate-set
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-precondition-predicate-set
 
 :pickup-passenger-precondition-predicate-set a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#PredicateSet> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicate> :move-to-next-coordinate-busatcoordinate , :pickup-passenger-busseatingcapacity , :pickup-passenger-isbusstop , :pickup-passenger-passengerneedsservice , :pickup-passenger-passengerpickcoordinate .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#PredicateSet> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicate> :move-to-next-coordinate-busatcoordinate , :pickup-passenger-busseatingcapacity , :pickup-passenger-isbusstop , :pickup-passenger-passengerneedsservice , :pickup-passenger-passengerpickcoordinate .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#pickup-passenger-totalcost
+# http://ontologies.cf.sscipaper.net/busTransitions#pickup-passenger-totalcost
 
 :pickup-passenger-totalcost a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Predicate> ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperator> "decrease" ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
-	<http://ontologies.cf.ericsson.net/Middle#hasPredicateRealName> "total-cost"^^xsd:string .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Predicate> ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperator> "decrease" ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateOperatorAmount> "1"^^xsd:integer ;
+	<http://ontologies.cf.sscipaper.net/Middle#hasPredicateRealName> "total-cost"^^xsd:string .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#total-cost
+# http://ontologies.cf.sscipaper.net/busTransitions#total-cost
 
 :total-cost a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
-# http://ontologies.cf.ericsson.net/busTransitions#total-cost-decrease
+# http://ontologies.cf.sscipaper.net/busTransitions#total-cost-decrease
 
 :total-cost-decrease a owl:Class ;
-	rdfs:subClassOf <http://ontologies.cf.ericsson.net/Middle#Function> .
+	rdfs:subClassOf <http://ontologies.cf.sscipaper.net/Middle#Function> .
 # 
 # Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
