@@ -8,8 +8,8 @@ This software is used for generating PDDL files out of model descriptions. PDDL 
 
 To install the software, you need a reasonably modern JDK/Maven setup. The following versions of JDK and Maven have been tested with this software, but it should work with newer versions also:
 
-* Oracle JDK build 1.8.0_11-b12
-* Apache Maven 3.1.1 
+* Oracle JDK build 1.8.0_11-b12 (currently available at http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* Apache Maven 3.1.1 (currently available at http://maven.apache.org/download.cgi)
 
 #### 2.2 Installation and Use
 
@@ -31,4 +31,4 @@ The software has an API which it uses to load the models and generate the PDDL f
 
 #### 2.4 Editing the models
 
-In order to edit the model files, any standard editor will suffice, however Protege is recommended. The sample BusStates/BusTransitions/TransportPlannerTR model files where created using Protege 5.0.0 (build beta-23).
+In order to edit the model files, any standard editor will suffice, however Protege is recommended. Protege is available at http://protege.stanford.edu/. The sample BusStates/BusTransitions/TransportPlannerTR model files where created using Protege 5.0.0 (build beta-23).
